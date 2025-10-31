@@ -1,12 +1,25 @@
+import "../styles/components/hero.css"
+import BackgroundGradient from "./BackgroundGradient"
+
 const Hero = () => {
   return (
     <section className="hero" id="home">
-      <p
-        className="hero-badge glass"
-        style={{ fontSize: "18px", color: "inherit" }}
-      >
-        ⚡︎ AI-Powered Growth for All-on-X Dentists
-      </p>
+      <BackgroundGradient />
+      <div className="hero-badge glass">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+        </svg>
+        <span style={{ marginLeft: "8px" }}>
+          AI-Powered Growth for All-on-X Dentists
+        </span>
+      </div>
 
       <h1>
         <span

@@ -6,9 +6,9 @@ export const whyChooseData = [
       "Rank #1 for high-value procedures",
       "Optimized for ChatGPT, Claude & Grok",
       "Dominate AI-powered local results",
-      "Voice search ready content"
+      "Voice search ready content",
     ],
-    cta: { text: "Learn More →", link: "#" }
+    cta: { text: "Book Free Demo", link: "#cta" },
   },
   {
     id: 2,
@@ -17,9 +17,9 @@ export const whyChooseData = [
       "Automate patient follow-ups",
       "Turn happy patients into reviews",
       "Real-time review monitoring",
-      "Response management"
+      "Response management",
     ],
-    cta: { text: "See Results →", link: "#" }
+    cta: { text: "Book Free Demo", link: "#cta" },
   },
   {
     id: 3,
@@ -28,9 +28,9 @@ export const whyChooseData = [
       "Appointment reminders & confirmations",
       "Post-treatment follow-up",
       "Automated recall campaigns",
-      "Treatment plan presentations"
+      "Treatment plan presentations",
     ],
-    cta: { text: "Get Started →", link: "#" }
+    cta: { text: "Book Free Demo", link: "#cta" },
   },
   {
     id: 4,
@@ -39,9 +39,9 @@ export const whyChooseData = [
       "AI-optimized blog posts",
       "Video marketing strategy",
       "Social media management",
-      "Case study showcases"
+      "Case study showcases",
     ],
-    cta: { text: "View Examples →", link: "#" }
+    cta: { text: "Book Free Demo", link: "#cta" },
   },
   {
     id: 5,
@@ -50,8 +50,8 @@ export const whyChooseData = [
       "Track AI search performance",
       "Monitor review sentiment",
       "Patient acquisition metrics",
-      "ROI tracking dashboard"
+      "ROI tracking dashboard",
     ],
-    cta: { text: "See Dashboard →", link: "#" }
-  }
-];
+    cta: { text: "Book Free Demo", link: "#cta" },
+  },
+]

@@ -2,7 +2,6 @@ import { useTheme } from "./hooks/useTheme"
 import { useScrollAnimations } from "./hooks/useScrollAnimations"
 import { useSmoothScroll } from "./hooks/useSmoothScroll"
 
-import BackgroundGradient from "./components/BackgroundGradient"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Stats from "./components/Stats"
@@ -24,7 +23,6 @@ function App() {
 
   return (
     <>
-      <BackgroundGradient />
       <Header />
       <Hero />
       <Stats />

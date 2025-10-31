@@ -1,0 +1,101 @@
+/* Footer */
+footer {
+  padding: 60px 40px 40px;
+  max-width: 100%;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.light-mode footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-column h4 {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #fff;
+}
+
+body.light-mode .footer-column a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+body.light-mode .footer-column a:hover {
+  color: #000;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+}
+
+body.light-mode .footer-bottom {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+footer a:hover {
+  color: #fff !important;
+}
+
+body.light-mode footer a:hover {
+  color: #000 !important;
+}
+
+body.light-mode footer div[style*="color: rgba(255, 255, 255, 0.7)"] {
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+body.light-mode footer a[style*="color: rgba(255, 255, 255, 0.6)"] {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  .cta-section h2 {
+    font-size: 36px;
+  }
+
+  .features-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
