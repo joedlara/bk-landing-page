@@ -46,6 +46,16 @@ const Header = () => {
               Book a Demo
             </a>
           </li>
+          <li>
+            <a
+              href="https://app.brandklout.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-button-glass"
+            >
+              Login
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
