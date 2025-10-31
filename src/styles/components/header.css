@@ -151,6 +151,22 @@ body.light-mode .moon-icon {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(102, 126, 234, 0.3);
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+  padding: 12px 28px;
+  border: none;
+  border-radius: 50px;
+  color: #fff !important;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-button-glass:hover {
+  background: rgba(102, 126, 234, 0.25);
+  border-color: rgba(102, 126, 234, 0.5);
+  transform: translateY(-2px);
 }
 
 /* Hide Book a Demo button in hero on desktop (≥768px) since it's in header */

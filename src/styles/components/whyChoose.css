@@ -1,3 +1,59 @@
+/* Why Choose Section */
+.why-choose-section {
+  padding: 100px 40px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #f5f5f5;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+/* Subtle gradient overlay from center */
+.why-choose-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(102, 126, 234, 0.15) 0%,
+    rgba(33, 150, 243, 0.08) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.why-choose-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.why-choose-section .section-title,
+.why-choose-section .section-subtitle {
+  color: #1a1a1a;
+}
+
+body.light-mode .why-choose-section {
+  background: #1a1a1a;
+}
+
+body.light-mode .why-choose-section::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(102, 126, 234, 0.2) 0%,
+    rgba(33, 150, 243, 0.12) 40%,
+    transparent 70%
+  );
+}
+
+body.light-mode .why-choose-section .section-title,
+body.light-mode .why-choose-section .section-subtitle {
+  color: white;
+}
+
 /* Carousel Container */
 .why-choose-carousel-container {
   position: relative;
