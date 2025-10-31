@@ -1,4 +1,5 @@
-import { statsData } from '../data/statsData';
+import { statsData } from "../data/statsData"
+import "../styles/components/stats.css"
 
 const Stats = () => {
   return (
@@ -14,7 +15,7 @@ const Stats = () => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Stats;
+export default Stats

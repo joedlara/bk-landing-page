@@ -1,0 +1,230 @@
+/* Carousel Container */
+.why-choose-carousel-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 60px auto 40px;
+  padding: 0 60px;
+}
+
+.why-choose-carousel {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.why-choose-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card Styles with Gradient Border */
+.why-choose-card {
+  position: relative;
+  flex: 0 0 calc(33.333% - 20px);
+  min-width: 380px;
+  padding: 40px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  background: #1a1a1a;
+  color: white;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+/* Gradient border effect - now follows rounded corners */
+.why-choose-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  padding: 3px;
+  background: linear-gradient(90deg, #667eea 0%, #2196f3 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Light mode - inverted (white background, dark text) */
+body.light-mode .why-choose-card {
+  background: white;
+  color: #1a1a1a;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.why-choose-card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.why-choose-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.why-choose-card li {
+  padding: 12px 0;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  position: relative;
+  padding-left: 24px;
+}
+
+.why-choose-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-size: 20px;
+}
+
+body.light-mode .why-choose-card li {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* CTA Link */
+.card-cta {
+  display: inline-flex;
+  align-items: center;
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.card-cta:hover {
+  color: #764ba2;
+  transform: translateX(5px);
+}
+
+/* Carousel Navigation Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(102, 126, 234, 0.9);
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  color: white;
+}
+
+.carousel-btn:hover {
+  background: #667eea;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+  left: 0;
+}
+
+.carousel-next {
+  right: 0;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(102, 126, 234, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: #667eea;
+  width: 32px;
+  border-radius: 6px;
+}
+
+@media (max-width: 1024px) {
+  .why-choose-card {
+    flex: 0 0 calc(100% - 20px);
+    min-width: calc(100% - 20px);
+    max-width: 500px;
+  }
+
+  .why-choose-carousel-container {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-choose-section {
+    padding: 80px 20px;
+  }
+
+  .why-choose-carousel-container {
+    padding: 0 45px;
+  }
+
+  .why-choose-card {
+    flex: 0 0 calc(100% - 10px);
+    min-width: calc(100% - 10px);
+    padding: 30px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-prev {
+    left: 5px;
+  }
+
+  .carousel-next {
+    right: 5px;
+  }
+
+  .why-choose-card h3 {
+    font-size: 20px;
+  }
+
+  .why-choose-card li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-choose-carousel-container {
+    padding: 0 40px;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .carousel-prev {
+    left: 2px;
+  }
+
+  .carousel-next {
+    right: 2px;
+  }
+}

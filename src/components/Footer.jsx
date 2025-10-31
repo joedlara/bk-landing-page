@@ -1,35 +1,41 @@
+import "../styles/components/footer.css"
+
 const Footer = () => {
   return (
-    <footer className="footer" id="contact">
-      <div className="footer-content">
+    <footer>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "start",
+          flexWrap: "wrap",
+          gap: "60px",
+          marginBottom: "60px",
+        }}
+      >
         <div>
-          <div className="footer-logo">BrandKlout</div>
-          <div style={{ marginTop: "20px" }}>
-            <p
-              style={{
-                margin: "5px 0 0 0",
-                color: "rgba(255, 255, 255, 0.6)",
-                fontSize: "14px",
-              }}
-            >
-              BrandKlout, Inc.
-            </p>
-            <p
-              style={{
-                margin: "5px 0 0 0",
-                color: "rgba(255, 255, 255, 0.6)",
-                fontSize: "14px",
-              }}
-            >
-              555 Anton Blvd <br />
-              Costa Mesa, CA 92626
-            </p>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+              marginBottom: "30px",
+            }}
+          >
+            <div className="logo" style={{ fontSize: "24px" }}>
+              BrandKlout
+            </div>
+          </div>
+          <div style={{ color: "rgba(255, 255, 255, 0.7)", lineHeight: "1.8" }}>
+            <p style={{ margin: "0", fontWeight: "600" }}>BrandKlout, Inc.</p>
+            <p style={{ margin: "5px 0 0 0" }}>555 Anton Blvd</p>
+            <p style={{ margin: "5px 0 0 0" }}>Costa Mesa, CA 92626</p>
           </div>
         </div>
 
         <div>
           <h4 style={{ marginBottom: "20px", fontSize: "16px" }}>Company</h4>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          <ul style={{ listStyle: "none", padding: "0", margin: "0" }}>
             <li style={{ marginBottom: "12px" }}>
               <a
                 href="#"

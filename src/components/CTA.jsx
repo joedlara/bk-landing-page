@@ -1,3 +1,5 @@
+import "../styles/components/cta.css"
+
 const CTA = () => {
   return (
     <section className="cta-section scroll-scale" id="cta">
@@ -27,14 +29,14 @@ const CTA = () => {
             Prequalify Your Practice
           </a>
         </div>
-        <div class="cta-video-container">
-          <div class="video-wrapper">
+        <div className="cta-video-container">
+          <div className="video-wrapper">
             <iframe
               src="https://www.youtube.com/embed/qxXc1GruLLY?si=rSh3W-e5sy79awWj"
               title="BrandKlout Introduction"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
         </div>

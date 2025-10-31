@@ -1,0 +1,109 @@
+/* CTA Section */
+.cta-section {
+  padding: 120px 40px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: calc(100% + 200px);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(102, 126, 234, 0.08) 20%,
+    rgba(118, 75, 162, 0.15) 35%,
+    rgba(240, 147, 251, 0.25) 50%,
+    rgba(118, 75, 162, 0.35) 65%,
+    rgba(79, 172, 254, 0.3) 80%,
+    rgba(102, 126, 234, 0.15) 95%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(60px);
+}
+
+body.light-mode .cta-section::before {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(102, 126, 234, 0.05) 20%,
+    rgba(118, 75, 162, 0.12) 35%,
+    rgba(240, 147, 251, 0.2) 50%,
+    rgba(118, 75, 162, 0.28) 65%,
+    rgba(79, 172, 254, 0.25) 80%,
+    rgba(102, 126, 234, 0.12) 95%,
+    transparent 100%
+  );
+}
+
+.cta-box {
+  padding: 80px 60px;
+}
+
+.cta-section h2 {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.cta-section p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+}
+
+body.light-mode .cta-section p {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* CTA Video Container */
+.cta-video-container {
+  padding-top: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+}
+
+body.light-mode .video-wrapper {
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}

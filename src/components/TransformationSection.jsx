@@ -1,3 +1,5 @@
+import "../styles/components/transformationSection.css"
+
 const TransformationSection = () => {
   return (
     <section className="transformation-scroll-section" id="transformation">
@@ -361,7 +363,7 @@ const TransformationSection = () => {
           </div>
         </div>
 
-        {/* Step 3 - Organic Lead Flow */}
+        {/* Step 3  */}
         <div className="transformation-scroll-item" data-step="3">
           <div className="transformation-scroll-content">
             <div className="step-text">
@@ -369,9 +371,7 @@ const TransformationSection = () => {
               <h3 className="step-title" style={{ color: "inherit" }}>
                 Organic Lead Flow
               </h3>
-              <p className="step-subtitle">
-                Steady stream without relying on PPC
-              </p>
+              <p className="step-subtitle">Steady stream without relying on PPC</p>
 
               <div style={{ marginTop: "30px" }}>
                 <p
@@ -432,23 +432,103 @@ const TransformationSection = () => {
                   }}
                 >
                   more appointment requests with just
-                  <strong> 7-12 reviews</strong> vs. none
+                  <strong>7-12 reviews</strong> vs. none
                 </p>
                 <p style={{ fontSize: "16px" }}>
                   → Reviews directly drive bookings
                 </p>
               </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <svg
+                  width="360"
+                  height="280"
+                  viewBox="0 0 360 280"
+                  className="bar-chart"
+                >
+                  <rect
+                    width="360"
+                    height="280"
+                    rx="20"
+                    fill="rgba(255, 255, 255, 0.2)"
+                  />
+                  {/* Increase in Reviews label floating above the chart  */}
+                  <text
+                    x="180"
+                    y="40"
+                    textAnchor="middle"
+                    fill="white"
+                    fontSize="22"
+                    fontWeight="700"
+                  >
+                    Increase in Reviews
+                  </text>
+                  {/* Bar chart centered  */}
+                  <g transform="translate(65, 230)">
+                    <rect
+                      className="bar bar-1"
+                      x="15"
+                      y="0"
+                      width="40"
+                      height="0"
+                      fill="rgba(255, 255, 255, 0.5)"
+                      rx="4"
+                    />
+                    <rect
+                      className="bar bar-2"
+                      x="70"
+                      y="0"
+                      width="40"
+                      height="0"
+                      fill="rgba(255, 255, 255, 0.6)"
+                      rx="4"
+                    />
+                    <rect
+                      className="bar bar-3"
+                      x="125"
+                      y="0"
+                      width="40"
+                      height="0"
+                      fill="rgba(255, 255, 255, 0.7)"
+                      rx="4"
+                    />
+                    <rect
+                      className="bar bar-4"
+                      x="180"
+                      y="0"
+                      width="40"
+                      height="0"
+                      fill="rgba(255, 255, 255, 0.85)"
+                      rx="4"
+                    />
+                    <rect
+                      className="bar bar-5"
+                      x="235"
+                      y="0"
+                      width="40"
+                      height="0"
+                      fill="white"
+                      rx="4"
+                    />
+                  </g>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Step 4 - Thriving Practice */}
+        {/* Step 4  */}
         <div className="transformation-scroll-item" data-step="4">
           <div className="transformation-scroll-content">
             <div className="step-text">
               <span className="step-number-badge">04</span>
               <h3 className="step-title" style={{ color: "inherit" }}>
-                Thriving Practice{" "}
+                Thriving Practice
               </h3>
               <p className="step-subtitle">
                 Higher profitability, happier patients, motivated team
@@ -501,7 +581,7 @@ const TransformationSection = () => {
                     marginBottom: "15px",
                   }}
                 >
-                  5x
+                  5-9%
                 </h4>
                 <p
                   style={{
@@ -510,13 +590,105 @@ const TransformationSection = () => {
                     marginBottom: "10px",
                   }}
                 >
-                  more appointment requests with just
-                  <strong> 7-12 reviews</strong> vs. none
+                  revenue boost from a <strong>one-star increase</strong> in
+                  ratings
                 </p>
                 <p style={{ fontSize: "16px" }}>
-                  → Reviews directly drive bookings
+                  → Better ratings = higher revenue
                 </p>
               </div>
+              <svg
+                width="320"
+                height="320"
+                viewBox="0 0 320 320"
+                className="line-chart"
+              >
+                <rect
+                  width="320"
+                  height="320"
+                  rx="20"
+                  fill="rgba(255, 255, 255, 0.2)"
+                />
+                <line
+                  x1="70"
+                  y1="260"
+                  x2="280"
+                  y2="260"
+                  stroke="rgba(255, 255, 255, 0.5)"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="70"
+                  y1="70"
+                  x2="70"
+                  y2="260"
+                  stroke="rgba(255, 255, 255, 0.5)"
+                  strokeWidth="2"
+                />
+                <text x="45" y="80" fill="white" fontSize="11">
+                  High
+                </text>
+                <text x="45" y="165" fill="white" fontSize="11">
+                  Med
+                </text>
+                <text x="45" y="260" fill="white" fontSize="11">
+                  Low
+                </text>
+                <text x="100" y="280" fill="white" fontSize="11">
+                  1★
+                </text>
+                <text x="150" y="280" fill="white" fontSize="11">
+                  2★
+                </text>
+                <text x="200" y="280" fill="white" fontSize="11">
+                  3★
+                </text>
+                <text x="250" y="280" fill="white" fontSize="11">
+                  4★
+                </text>
+                <path
+                  className="line-path"
+                  d="M 100,240 L 150,200 L 200,140 L 250,90"
+                  stroke="white"
+                  strokeWidth="4"
+                  fill="none"
+                  strokeDasharray="300"
+                  strokeDashoffset="300"
+                  strokeLinecap="round"
+                />
+                <circle
+                  className="line-point point-1"
+                  cx="100"
+                  cy="240"
+                  r="6"
+                  fill="white"
+                  opacity="0"
+                />
+                <circle
+                  className="line-point point-2"
+                  cx="150"
+                  cy="200"
+                  r="6"
+                  fill="white"
+                  opacity="0"
+                />
+                <circle
+                  className="line-point point-3"
+                  cx="200"
+                  cy="140"
+                  r="6"
+                  fill="white"
+                  opacity="0"
+                />
+                <circle
+                  className="line-point point-4"
+                  cx="250"
+                  cy="90"
+                  r="6"
+                  fill="white"
+                  opacity="0"
+                />
+              </svg>
             </div>
           </div>
         </div>

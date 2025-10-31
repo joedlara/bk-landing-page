@@ -1,0 +1,127 @@
+/* FAQ Section */
+.faq-section {
+  padding: 100px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  padding: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.faq-question:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+body.light-mode .faq-question:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.faq-question h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  padding-right: 20px;
+}
+
+.faq-icon {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 30px 30px;
+}
+
+.faq-answer p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  margin: 0;
+  padding-top: 15px;
+}
+
+body.light-mode .faq-answer p {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Mobile FAQ Condensing */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 60px 20px;
+  }
+
+  .faq-item {
+    margin-bottom: 12px;
+  }
+
+  .faq-question {
+    padding: 20px;
+  }
+
+  .faq-question h3 {
+    font-size: 16px;
+    padding-right: 15px;
+  }
+
+  .faq-icon {
+    font-size: 20px;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 400px;
+    padding: 0 20px 20px;
+  }
+
+  .faq-answer p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Hide last 2 FAQs on mobile to reduce scroll */
+  .faq-item:nth-child(n + 6) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-section {
+    padding: 40px 15px;
+  }
+
+  .faq-question {
+    padding: 16px;
+  }
+
+  .faq-question h3 {
+    font-size: 15px;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 0 16px 16px;
+  }
+}

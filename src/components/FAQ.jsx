@@ -1,33 +1,13 @@
-import { useEffect } from "react"
+import { useState } from "react"
 import { faqData } from "../data/faqData"
+import "../styles/components/faq.css"
 
 const FAQ = () => {
-  useEffect(() => {
-    const faqItems = document.querySelectorAll(".faq-item")
+  const [activeId, setActiveId] = useState(null)
 
-    faqItems.forEach((item) => {
-      const question = item.querySelector(".faq-question")
-
-      const handleClick = () => {
-        const isActive = item.classList.contains("active")
-
-        // Close all items
-        faqItems.forEach((faq) => faq.classList.remove("active"))
-
-        // Toggle current item
-        if (!isActive) {
-          item.classList.add("active")
-        }
-      }
-
-      question.addEventListener("click", handleClick)
-
-      // Cleanup
-      return () => {
-        question.removeEventListener("click", handleClick)
-      }
-    })
-  }, [])
+  const handleClick = (id) => {
+    setActiveId(activeId === id ? null : id)
+  }
 
   return (
     <section className="faq-section scroll-fade-in" id="faq">
@@ -38,7 +18,11 @@ const FAQ = () => {
 
       <div className="faq-container">
         {faqData.map((faq) => (
-          <div key={faq.id} className="faq-item glass">
+          <div
+            key={faq.id}
+            className={`faq-item glass ${activeId === faq.id ? "active" : ""}`}
+            onClick={() => handleClick(faq.id)}
+          >
             <div className="faq-question">
               <span>{faq.question}</span>
               <span className="faq-icon">+</span>

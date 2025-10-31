@@ -1,0 +1,536 @@
+/* Transformation Section */
+.transformation-section {
+  padding: 100px 40px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(102, 126, 234, 0.08) 0%,
+    rgba(118, 75, 162, 0.12) 50%,
+    rgba(102, 126, 234, 0.08) 100%
+  );
+}
+
+body.light-mode .transformation-section {
+  background: linear-gradient(
+    180deg,
+    rgba(102, 126, 234, 0.06) 0%,
+    rgba(118, 75, 162, 0.1) 50%,
+    rgba(102, 126, 234, 0.06) 100%
+  );
+}
+
+.transformation-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(102, 126, 234, 0.15) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.transformation-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Scroll Animation Section */
+.transformation-scroll-section {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(102, 126, 234, 0.08) 0%,
+    rgba(118, 75, 162, 0.12) 50%,
+    rgba(102, 126, 234, 0.08) 100%
+  );
+  padding: 100px 40px;
+}
+
+body.light-mode .transformation-scroll-section {
+  background: linear-gradient(
+    180deg,
+    rgba(102, 126, 234, 0.06) 0%,
+    rgba(118, 75, 162, 0.1) 50%,
+    rgba(102, 126, 234, 0.06) 100%
+  );
+}
+
+.transformation-intro {
+  max-width: 800px;
+  margin: 0 auto 100px;
+  text-align: center;
+}
+
+.transformation-scroll-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.transformation-scroll-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  min-height: 100vh;
+  padding: 80px 0;
+}
+
+.transformation-scroll-content {
+  display: flex;
+  align-items: center;
+}
+
+.step-text {
+  max-width: 600px;
+}
+
+.step-number-badge {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+body.light-mode .step-number-badge {
+  background: rgba(102, 126, 234, 0.15);
+}
+
+.step-title {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.step-subtitle {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.step-description {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+body.light-mode .step-description {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.transformation-scroll-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual-card {
+  background: white;
+  border-radius: 28px;
+  padding: 30px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  max-width: 500px;
+  width: 100%;
+}
+
+.visual-card.content-card {
+  padding: 40px;
+  text-align: center;
+}
+
+/* Card 1 - AI Search (Orange gradient) */
+.transformation-scroll-item[data-step="1"] .visual-card.content-card {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+}
+
+/* Card 2 - 61% (Pink/Red gradient) */
+.transformation-scroll-item[data-step="2"] .visual-card.content-card {
+  background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+}
+
+/* Card 3 - 5x (Blue gradient) */
+.transformation-scroll-item[data-step="3"] .visual-card.content-card {
+  background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+}
+
+/* Card 4 - 5-9% (Purple gradient) */
+.transformation-scroll-item[data-step="4"] .visual-card.content-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Text colors for all content cards - white text on gradients */
+.visual-card.content-card h4 {
+  color: white !important;
+}
+
+.visual-card.content-card p {
+  color: white !important;
+}
+
+.visual-card.content-card p span,
+.visual-card.content-card .step-description {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Light mode - same gradients, white text */
+body.light-mode
+  .transformation-scroll-item[data-step="1"]
+  .visual-card.content-card {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+}
+
+body.light-mode
+  .transformation-scroll-item[data-step="2"]
+  .visual-card.content-card {
+  background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+}
+
+body.light-mode
+  .transformation-scroll-item[data-step="3"]
+  .visual-card.content-card {
+  background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+}
+
+body.light-mode
+  .transformation-scroll-item[data-step="4"]
+  .visual-card.content-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+body.light-mode .visual-card.content-card h4 {
+  color: white !important;
+}
+
+body.light-mode .visual-card.content-card p {
+  color: white !important;
+}
+
+body.light-mode .visual-card.content-card p span {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Regular visual cards (non-content) keep normal backgrounds */
+body.light-mode .visual-card:not(.content-card) {
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+body.light-mode .step-text strong {
+  color: #667eea !important;
+}
+
+body.light-mode .step-text span {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.transformation-scroll-item.active .visual-card {
+  transform: scale(1.02);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .transformation-scroll-item {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .step-title {
+    font-size: 42px;
+  }
+
+  .step-subtitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .transformation-scroll-section {
+    padding: 60px 30px;
+  }
+
+  .transformation-scroll-item {
+    gap: 30px;
+    padding: 40px 0;
+  }
+
+  .step-title {
+    font-size: 36px;
+  }
+
+  .step-subtitle {
+    font-size: 16px;
+  }
+
+  .visual-card {
+    max-width: 85%;
+    padding: 25px;
+  }
+
+  .visual-card.content-card {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .transformation-scroll-section {
+    padding: 40px 15px;
+  }
+
+  .transformation-scroll-item {
+    gap: 20px;
+    padding: 30px 0;
+  }
+
+  .step-number-badge {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  .step-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .step-subtitle {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .step-description {
+    font-size: 16px;
+  }
+
+  .visual-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .visual-card.content-card {
+    padding: 25px;
+  }
+
+  .visual-card.content-card h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .visual-card.content-card li {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  /* Make SVG charts responsive */
+  .visual-card svg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* AI Map Animations */
+@keyframes float-bubble {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -15px);
+  }
+}
+
+.ai-bubble {
+  animation: float-bubble 3s ease-in-out infinite;
+}
+
+.bubble-gpt {
+  animation-delay: 0s;
+}
+.bubble-claude {
+  animation-delay: 0.5s;
+}
+.bubble-grok {
+  animation-delay: 1s;
+}
+.bubble-gemini {
+  animation-delay: 1.5s;
+}
+
+/* Donut Chart Animation */
+.donut-progress.active {
+  animation: fill-donut 2s ease-out forwards;
+}
+
+@keyframes fill-donut {
+  to {
+    stroke-dashoffset: 119;
+  }
+}
+
+/* Bar Chart Animation */
+.bar.active {
+  animation: grow-bar 1s ease-out forwards;
+}
+
+.bar-1.active {
+  animation-delay: 0.1s;
+}
+.bar-2.active {
+  animation-delay: 0.2s;
+}
+.bar-3.active {
+  animation-delay: 0.3s;
+}
+.bar-4.active {
+  animation-delay: 0.4s;
+}
+.bar-5.active {
+  animation-delay: 0.5s;
+}
+
+@keyframes grow-bar {
+  to {
+    height: var(--bar-height);
+    y: calc(0px - var(--bar-height));
+  }
+}
+
+.bar-1 {
+  --bar-height: 60px;
+}
+.bar-2 {
+  --bar-height: 90px;
+}
+.bar-3 {
+  --bar-height: 120px;
+}
+.bar-4 {
+  --bar-height: 150px;
+}
+.bar-5 {
+  --bar-height: 180px;
+}
+
+/* Line Chart Animation */
+.line-path.active {
+  animation: draw-line 2s ease-out forwards;
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.line-point.active {
+  animation: fade-point 0.3s ease-out forwards;
+}
+
+.point-1.active {
+  animation-delay: 0.5s;
+}
+.point-2.active {
+  animation-delay: 1s;
+}
+.point-3.active {
+  animation-delay: 1.5s;
+}
+.point-4.active {
+  animation-delay: 2s;
+}
+
+@keyframes fade-point {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .transformation-scroll-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .transformation-sticky-content,
+  .transformation-sticky-visual {
+    position: relative;
+    top: 0;
+    height: auto;
+  }
+
+  .scroll-step {
+    height: auto;
+    padding: 40px 0;
+  }
+}
+
+/* Why Choose Section */
+.why-choose-section {
+  padding: 100px 40px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #f5f5f5;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+/* Subtle gradient overlay from center */
+.why-choose-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(102, 126, 234, 0.15) 0%,
+    rgba(33, 150, 243, 0.08) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.why-choose-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.why-choose-section .section-title,
+.why-choose-section .section-subtitle {
+  color: #1a1a1a;
+}
+
+body.light-mode .why-choose-section {
+  background: #1a1a1a;
+}
+
+body.light-mode .why-choose-section::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(102, 126, 234, 0.2) 0%,
+    rgba(33, 150, 243, 0.12) 40%,
+    transparent 70%
+  );
+}
+
+body.light-mode .why-choose-section .section-title,
+body.light-mode .why-choose-section .section-subtitle {
+  color: white;
+}
