@@ -27,7 +27,7 @@ const PracticeLogos = () => {
 
     let animationId
     let scrollPosition = 0
-    const scrollSpeed = 0.5 // pixels per frame
+    const scrollSpeed = 0.3 // pixels per frame (slowed down)
 
     const animate = () => {
       scrollPosition += scrollSpeed
@@ -43,22 +43,8 @@ const PracticeLogos = () => {
 
     animationId = requestAnimationFrame(animate)
 
-    // Pause on hover
-    const handleMouseEnter = () => {
-      cancelAnimationFrame(animationId)
-    }
-
-    const handleMouseLeave = () => {
-      animationId = requestAnimationFrame(animate)
-    }
-
-    carousel.addEventListener("mouseenter", handleMouseEnter)
-    carousel.addEventListener("mouseleave", handleMouseLeave)
-
     return () => {
       cancelAnimationFrame(animationId)
-      carousel.removeEventListener("mouseenter", handleMouseEnter)
-      carousel.removeEventListener("mouseleave", handleMouseLeave)
     }
   }, [])
 
