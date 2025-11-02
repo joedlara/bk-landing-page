@@ -1,21 +1,41 @@
 import { useEffect, useRef } from "react"
 import "../styles/components/practiceLogos.css"
+import practice1 from "../assets/practices/ocpao.png"
+import practice2 from "../assets/practices/cal_dental.png"
+import practice3 from "../assets/practices/omnia.png"
+import practice4 from "../assets/practices/atwood.png"
+import practice5 from "../assets/practices/oceanic.png"
 
 const PracticeLogos = () => {
   const carouselRef = useRef(null)
 
   // Practice logo data - using placeholder images for now
   const practices = [
-    { id: 1, name: "Practice One", logo: "https://via.placeholder.com/180x80/667eea/ffffff?text=Practice+1" },
-    { id: 2, name: "Practice Two", logo: "https://via.placeholder.com/180x80/764ba2/ffffff?text=Practice+2" },
-    { id: 3, name: "Practice Three", logo: "https://via.placeholder.com/180x80/667eea/ffffff?text=Practice+3" },
-    { id: 4, name: "Practice Four", logo: "https://via.placeholder.com/180x80/764ba2/ffffff?text=Practice+4" },
-    { id: 5, name: "Practice Five", logo: "https://via.placeholder.com/180x80/667eea/ffffff?text=Practice+5" },
-    { id: 6, name: "Practice Six", logo: "https://via.placeholder.com/180x80/764ba2/ffffff?text=Practice+6" },
-    { id: 7, name: "Practice Seven", logo: "https://via.placeholder.com/180x80/667eea/ffffff?text=Practice+7" },
-    { id: 8, name: "Practice Eight", logo: "https://via.placeholder.com/180x80/764ba2/ffffff?text=Practice+8" },
-    { id: 9, name: "Practice Nine", logo: "https://via.placeholder.com/180x80/667eea/ffffff?text=Practice+9" },
-    { id: 10, name: "Practice Ten", logo: "https://via.placeholder.com/180x80/764ba2/ffffff?text=Practice+10" },
+    {
+      id: 1,
+      name: "Practice One",
+      logo: practice1,
+    },
+    {
+      id: 2,
+      name: "Practice Two",
+      logo: practice2,
+    },
+    {
+      id: 3,
+      name: "Practice Three",
+      logo: practice3,
+    },
+    {
+      id: 4,
+      name: "Practice Four",
+      logo: practice4,
+    },
+    {
+      id: 5,
+      name: "Practice Five",
+      logo: practice5,
+    },
   ]
 
   // Duplicate the logos array for seamless infinite scroll
