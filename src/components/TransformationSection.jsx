@@ -287,7 +287,18 @@ const TransformationSection = () => {
                   <div className="strategies-list">
                     {card.strategies.map((strategy, idx) => (
                       <div key={idx} className="strategy-item">
-                        <span className="strategy-name">{strategy.name}</span>
+                        <span
+                          style={{
+                            background:
+                              "linear-gradient(90deg, #3B82F6 0%, #9333EA 100%)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                          }}
+                          className="strategy-name"
+                        >
+                          {strategy.name}
+                        </span>
                         <span className="strategy-description">
                           {strategy.description}
                         </span>
