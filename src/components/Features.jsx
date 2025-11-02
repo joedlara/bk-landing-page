@@ -66,6 +66,11 @@ const Features = () => {
               key={feature.id}
               className={`feature-card glass ${animationClass}`}
             >
+              {feature.image && (
+                <div className="feature-image">
+                  <img src={feature.image} alt={feature.title} />
+                </div>
+              )}
               <div className="feature-icon">
                 <svg
                   width="32"
