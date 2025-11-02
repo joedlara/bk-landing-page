@@ -7,6 +7,7 @@ import Hero from "./components/Hero"
 import Stats from "./components/Stats"
 import Features from "./components/Features"
 import Testimonials from "./components/Testimonials"
+import PracticeLogos from "./components/PracticeLogos"
 import TransformationSection from "./components/TransformationSection"
 import WhyChoose from "./components/WhyChoose"
 import CTA from "./components/CTA"
@@ -28,6 +29,7 @@ function App() {
       <Stats />
       <Features />
       <Testimonials />
+      <PracticeLogos />
       <TransformationSection />
       <WhyChoose />
       <FAQ />
