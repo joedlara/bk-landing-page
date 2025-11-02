@@ -24,7 +24,7 @@ const Hero = () => {
       <h1>
         <span
           style={{
-            background: "linear-gradient(135deg, #f093fb 0%, #667eea 100%)",
+            background: "linear-gradient(90deg, #3B82F6 0%, #9333EA 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
