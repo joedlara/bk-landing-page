@@ -131,3 +131,19 @@ body.light-mode .testimonial-rating span:last-child {
 body.light-mode .author-info p {
   color: rgba(0, 0, 0, 0.5);
 }
+
+/* Hide testimonial quote text on small screens */
+@media (max-width: 476px) {
+  .testimonial-text {
+    display: none;
+  }
+
+  .testimonial-card {
+    padding: 30px 20px;
+  }
+
+  .video-placeholder {
+    height: 200px;
+    margin-bottom: 20px;
+  }
+}
