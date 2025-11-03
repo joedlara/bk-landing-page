@@ -79,30 +79,33 @@ const GoogleReviews = () => {
           <div className="reviews-track" style={{ transform: transformValue }}>
             {googleReviewsData.map((review) => (
               <div key={review.id} className="google-review-card glass">
-                {/* Card Header */}
+                {/* Card Header - UPDATED STRUCTURE */}
                 <div className="review-card-header">
-                  <div className="reviewer-info">
-                    <div className="reviewer-avatar">{review.avatar}</div>
-                    <div className="reviewer-details">
-                      <h4 className="reviewer-name">{review.name}</h4>
-                      <div className="review-meta">
-                        <span className="review-date">{review.date}</span>
-                        {review.verified && (
-                          <span className="verified-badge">
-                            <svg
-                              width="12"
-                              height="12"
-                              viewBox="0 0 24 24"
-                              fill="currentColor"
-                            >
-                              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-                            </svg>
-                            Verified
-                          </span>
-                        )}
+                  <div className="review-header-top">
+                    <div className="reviewer-info">
+                      <div className="reviewer-avatar">{review.avatar}</div>
+                      <div className="reviewer-details">
+                        <h4 className="reviewer-name">{review.name}</h4>
+                        <div className="review-meta">
+                          <span className="review-date">{review.date}</span>
+                          {review.verified && (
+                            <span className="verified-badge">
+                              <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                              >
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                              </svg>
+                              Verified
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
+                  {/* Stars moved below reviewer info */}
                   {renderStars(review.rating)}
                 </div>
 
