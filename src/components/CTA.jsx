@@ -5,7 +5,17 @@ const CTA = () => {
     <section className="cta-section scroll-scale" id="cta">
       <div className="cta-box">
         <h2>
-          Ready to Become #1 All-on-X
+          Ready to Become the {""}
+          <span
+            style={{
+              background: "linear-gradient(90deg, #3B82F6 0%, #9333EA 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            #1 All-on-X
+          </span>
           <br /> Dentists in Your Area?
         </h2>
         <p>
