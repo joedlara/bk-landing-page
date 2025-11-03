@@ -64,9 +64,39 @@ body.light-mode .stat-label {
 }
 
 @media (max-width: 768px) {
+  .stats-section {
+    padding: 80px 20px;
+  }
+
   .stats-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 40px 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px 20px;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 25px 15px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    line-height: 1.2;
   }
 }
