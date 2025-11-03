@@ -184,7 +184,7 @@ const TransformationSection = () => {
       id="transformation"
     >
       <div className="transformation-intro">
-        <h2 className="section-title">Your Practice Transformation</h2>
+        <h2 className="section-title">Your Future Practice</h2>
         <p className="section-subtitle">
           Empower your dental team with modern tools and smart automation that
           attract more patients, simplify workflows, and elevate every aspect of

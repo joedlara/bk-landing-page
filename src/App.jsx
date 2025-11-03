@@ -5,7 +5,6 @@ import { useSmoothScroll } from "./hooks/useSmoothScroll"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Stats from "./components/Stats"
-import Features from "./components/Features"
 import Testimonials from "./components/Testimonials"
 import PracticeLogos from "./components/PracticeLogos"
 import TransformationSection from "./components/TransformationSection"
@@ -28,13 +27,11 @@ function App() {
     <>
       <Header />
       <Hero />
-      <Stats />
-      <Features />
-      <Testimonials />
       <PracticeLogos />
+      <Stats />
+      <Testimonials />
       <TransformationSection />
       <WhyChoose />
-      <ComparisonSection />
       <GoogleReviews />
       <CTA />
       <FAQ />

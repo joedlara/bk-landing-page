@@ -72,7 +72,7 @@ const WhyChoose = () => {
 
   return (
     <section className="why-choose-section" id="why-choose">
-      <h2 className="section-title">What Sets Us Apart?</h2>
+      <h2 className="section-title">Why Work With Us?</h2>
       <p className="section-subtitle">
         Discover why top dentists choose BrandKlout to scale smarter, grow
         faster, and stand out in their market.
