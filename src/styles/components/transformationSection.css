@@ -69,17 +69,17 @@ body.light-mode .transformation-intro .section-subtitle {
 }
 
 .accordion-card.active {
-  background: #e8ecf4;
-  border: 4px solid transparent;
   background-image: linear-gradient(#e8ecf4, #e8ecf4),
     linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
+  background: rgba(102, 126, 234, 0.25);
+  border: 4px solid rgba(102, 126, 234, 0.7);
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3),
+    0 0 30px rgba(102, 126, 234, 0.2);
+  transform: translateY(-2px);
 }
 
 body.light-mode .accordion-card {
-  background: #2a2a2a;
+  background: #2b2b2b;
   border-color: transparent;
 }
 
@@ -88,13 +88,13 @@ body.light-mode .accordion-card:hover {
 }
 
 body.light-mode .accordion-card.active {
-  background: #2d2d3d;
-  border: 4px solid transparent;
   background-image: linear-gradient(#2d2d3d, #2d2d3d),
     linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
+  background: rgba(102, 126, 234, 0.25);
+  border: 4px solid rgba(102, 126, 234, 0.7);
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3),
+    0 0 30px rgba(102, 126, 234, 0.2);
+  transform: translateY(-2px);
 }
 
 /* Card Header */
@@ -120,8 +120,16 @@ body.light-mode .accordion-card.active {
   letter-spacing: 0.5px;
 }
 
+.accordion-card.active .card-number {
+  color: #5568d3;
+}
+
 body.light-mode .card-number {
   color: #8b9eff;
+}
+
+body.light-mode .accordion-card.active .card-number {
+  color: #a0b0ff;
 }
 
 .accordion-card-title {
@@ -133,11 +141,11 @@ body.light-mode .card-number {
 }
 
 .accordion-card.active .accordion-card-title {
-  color: #1a1a1a;
+  color: #ffffff;
 }
 
 body.light-mode .accordion-card.active .accordion-card-title {
-  color: white;
+  color: #000000;
 }
 
 body.light-mode .accordion-card-title {
@@ -206,8 +214,16 @@ body.light-mode .accordion-toggle {
   margin: 0 0 24px 0;
 }
 
-body.light-mode .accordion-card-subtitle {
+.accordion-card.active .accordion-card-subtitle {
   color: #aaa;
+}
+
+body.light-mode .accordion-card-subtitle {
+  color: #333;
+}
+
+body.light-mode .accordion-card.active .accordion-card-subtitle {
+  color: #333;
 }
 
 /* Key Strategies Section */
@@ -224,8 +240,16 @@ body.light-mode .accordion-card-subtitle {
   text-transform: uppercase;
 }
 
-body.light-mode .strategies-heading {
+.accordion-card.active .strategies-heading {
   color: #999;
+}
+
+body.light-mode .strategies-heading {
+  color: #555;
+}
+
+body.light-mode .accordion-card.active .strategies-heading {
+  color: #555;
 }
 
 .strategies-list {
@@ -260,11 +284,19 @@ body.light-mode .strategy-name {
 .strategy-description {
   font-size: 14px;
   line-height: 1.5;
-  color: #666;
+  color: #999;
+}
+
+.accordion-card.active .strategy-description {
+  color: #999;
 }
 
 body.light-mode .strategy-description {
   color: #999;
+}
+
+body.light-mode .accordion-card.active .strategy-description {
+  color: #333;
 }
 
 /* Video Display */
