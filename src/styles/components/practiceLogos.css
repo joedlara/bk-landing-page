@@ -36,7 +36,17 @@
   width: 180px;
   height: 80px;
   object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+/* Light mode - keep logos darker/grayed out */
+body.light-mode .practice-logo-img {
   filter: grayscale(100%) brightness(0.8) opacity(0.7);
+}
+
+/* Dark mode - make logos bright white */
+body:not(.light-mode) .practice-logo-img {
+  filter: brightness(0) invert(1) brightness(2);
 }
 
 /* Responsive adjustments */

@@ -15,6 +15,7 @@ import FAQ from "./components/FAQ"
 import Footer from "./components/Footer"
 
 import "./styles/global.css"
+import GoogleReviews from "./components/GoogleReviews"
 
 function App() {
   // Initialize custom hooks
@@ -32,8 +33,9 @@ function App() {
       <PracticeLogos />
       <TransformationSection />
       <WhyChoose />
-      <FAQ />
+      <GoogleReviews />
       <CTA />
+      <FAQ />
       <Footer />
     </>
   )

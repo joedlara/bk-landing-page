@@ -44,8 +44,13 @@ const PracticeLogos = () => {
     },
   ]
 
-  // Duplicate the logos array for seamless infinite scroll
-  const duplicatedPractices = [...practices, ...practices]
+  // Duplicate the logos array MULTIPLE times for truly seamless infinite scroll
+  const duplicatedPractices = [
+    ...practices,
+    ...practices,
+    ...practices,
+    ...practices,
+  ]
 
   useEffect(() => {
     const carousel = carouselRef.current
@@ -58,8 +63,11 @@ const PracticeLogos = () => {
     const animate = () => {
       scrollPosition += scrollSpeed
 
-      // Reset position when first set of logos has completely scrolled
-      if (scrollPosition >= carousel.scrollWidth / 2) {
+      // Calculate the width of one set of logos
+      const singleSetWidth = carousel.scrollWidth / 4 // Divided by 4 because we have 4 sets
+
+      // Reset position seamlessly when first set has scrolled
+      if (scrollPosition >= singleSetWidth) {
         scrollPosition = 0
       }
 
