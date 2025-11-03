@@ -16,6 +16,7 @@ import Footer from "./components/Footer"
 
 import "./styles/global.css"
 import GoogleReviews from "./components/GoogleReviews"
+import ComparisonSection from "./components/ComparisonSection"
 
 function App() {
   // Initialize custom hooks
@@ -33,6 +34,7 @@ function App() {
       <PracticeLogos />
       <TransformationSection />
       <WhyChoose />
+      <ComparisonSection />
       <GoogleReviews />
       <CTA />
       <FAQ />
