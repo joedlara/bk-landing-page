@@ -55,46 +55,54 @@ body.light-mode .transformation-intro .section-subtitle {
 }
 
 .accordion-card {
-  background: #f8f9fb;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   min-width: 450px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .accordion-card:hover {
-  background: #f0f2f7;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .accordion-card.active {
-  background: #e8ecf4;
-  border: 4px solid transparent;
-  background-image: linear-gradient(#e8ecf4, #e8ecf4),
-    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
 }
 
 body.light-mode .accordion-card {
-  background: #2a2a2a;
-  border-color: transparent;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 body.light-mode .accordion-card:hover {
-  background: #333;
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 body.light-mode .accordion-card.active {
-  background: #2d2d3d;
-  border: 4px solid transparent;
-  background-image: linear-gradient(#2d2d3d, #2d2d3d),
-    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
 }
 
 /* Card Header */
@@ -129,19 +137,19 @@ body.light-mode .card-number {
   font-weight: 700;
   line-height: 1.3;
   margin: 0;
-  color: #1a1a1a;
+  color: white;
 }
 
 .accordion-card.active .accordion-card-title {
-  color: #1a1a1a;
+  color: white;
 }
 
 body.light-mode .accordion-card.active .accordion-card-title {
-  color: white;
+  color: #1a1a1a;
 }
 
 body.light-mode .accordion-card-title {
-  color: white;
+  color: #1a1a1a;
 }
 
 .accordion-toggle {
@@ -202,12 +210,12 @@ body.light-mode .accordion-toggle {
 .accordion-card-subtitle {
   font-size: 16px;
   line-height: 1.6;
-  color: #666;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0 0 24px 0;
 }
 
 body.light-mode .accordion-card-subtitle {
-  color: #aaa;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 /* Key Strategies Section */
@@ -219,13 +227,13 @@ body.light-mode .accordion-card-subtitle {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #888;
+  color: rgba(255, 255, 255, 0.5);
   margin: 0 0 16px 0;
   text-transform: uppercase;
 }
 
 body.light-mode .strategies-heading {
-  color: #999;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .strategies-list {
@@ -260,11 +268,11 @@ body.light-mode .strategy-name {
 .strategy-description {
   font-size: 14px;
   line-height: 1.5;
-  color: #666;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 body.light-mode .strategy-description {
-  color: #999;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /* Video Display */
