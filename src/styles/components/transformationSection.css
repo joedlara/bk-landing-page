@@ -77,11 +77,8 @@ body.light-mode .transformation-intro .section-subtitle {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 4px solid transparent;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
-    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
   box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
 }
 
@@ -103,11 +100,8 @@ body.light-mode .accordion-card.active {
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 4px solid transparent;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
   box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
 }
 
@@ -143,19 +137,19 @@ body.light-mode .card-number {
   font-weight: 700;
   line-height: 1.3;
   margin: 0;
-  color: #1a1a1a;
+  color: white;
 }
 
 .accordion-card.active .accordion-card-title {
-  color: #1a1a1a;
+  color: white;
 }
 
 body.light-mode .accordion-card.active .accordion-card-title {
-  color: white;
+  color: #1a1a1a;
 }
 
 body.light-mode .accordion-card-title {
-  color: white;
+  color: #1a1a1a;
 }
 
 .accordion-toggle {
@@ -216,12 +210,12 @@ body.light-mode .accordion-toggle {
 .accordion-card-subtitle {
   font-size: 16px;
   line-height: 1.6;
-  color: #666;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0 0 24px 0;
 }
 
 body.light-mode .accordion-card-subtitle {
-  color: #aaa;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 /* Key Strategies Section */
@@ -233,13 +227,13 @@ body.light-mode .accordion-card-subtitle {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #888;
+  color: rgba(255, 255, 255, 0.5);
   margin: 0 0 16px 0;
   text-transform: uppercase;
 }
 
 body.light-mode .strategies-heading {
-  color: #999;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .strategies-list {
@@ -274,11 +268,11 @@ body.light-mode .strategy-name {
 .strategy-description {
   font-size: 14px;
   line-height: 1.5;
-  color: #666;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 body.light-mode .strategy-description {
-  color: #999;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /* Video Display */
