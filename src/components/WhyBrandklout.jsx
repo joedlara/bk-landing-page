@@ -1,0 +1,143 @@
+import "../styles/components/whyBrandKlout.css"
+
+const WhyBrandKlout = () => {
+  const brandKloutFeatures = [
+    "Transparent reporting you can trust",
+    "Track every lead with integrated CRM",
+    "Local SEO and AI-driven marketing tools",
+    "24/7 access to your campaign performance",
+    "Exclusive territory protection for your area",
+    "60-day money-back guarantee",
+    "No long contracts. Stay for results",
+  ]
+
+  const othersFeatures = [
+    "No insight into where leads come from",
+    "Depend on ads with short-term gains",
+    "Generic, copy-paste marketing plans",
+    "Slow updates and poor communication",
+    "Compete with nearby clients",
+    "No refund or satisfaction guarantee",
+    "Locked into contracts with no flexibility",
+  ]
+
+  return (
+    <section
+      className="why-brandklout-section scroll-fade-in"
+      id="why-brandklout"
+    >
+      <div className="why-brandklout-container">
+        <div className="why-brandklout-header">
+          <h2 className="why-brandklout-title">What Makes Us Different?</h2>
+
+          <p className="why-brandklout-subtitle">
+            We focus on transparency, patient growth, and long-term success you
+            can measure.
+          </p>
+        </div>
+
+        <div className="comparison-grid">
+          {/* BrandKlout Side */}
+          <div className="comparison-column brandklout-column">
+            <div className="column-header">
+              <h3>BrandKlout</h3>
+              <div className="decorative-line"></div>
+            </div>
+            <div className="features-section">
+              <h4 className="features-title">FEATURES INCLUDED :</h4>
+              <ul className="features-list">
+                {brandKloutFeatures.map((feature, index) => (
+                  <li key={index} className="feature-item">
+                    <span className="check-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="#10B981"
+                          strokeWidth="2"
+                          fill="none"
+                        />
+                        <path
+                          d="M8 12L11 15L16 9"
+                          stroke="#10B981"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <span className="feature-text">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* VS Badge */}
+          <div className="vs-badge">
+            <span>VS</span>
+          </div>
+
+          {/* Others Side */}
+          <div className="comparison-column others-column">
+            <div className="column-header">
+              <h3>Others</h3>
+            </div>
+            <div className="features-section">
+              <h4 className="features-title">FEATURES NOT INCLUDED :</h4>
+              <ul className="features-list">
+                {othersFeatures.map((feature, index) => (
+                  <li key={index} className="feature-item">
+                    <span className="cross-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="#EF4444"
+                          strokeWidth="2"
+                          fill="none"
+                        />
+                        <path
+                          d="M15 9L9 15M9 9L15 15"
+                          stroke="#EF4444"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </span>
+                    <span className="feature-text">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Guarantee Text */}
+        <div className="guarantee-text">
+          <p>
+            <strong>
+              No Lock-In Contract.
+              <br /> 60-Days Money Back Guarantee. <br />
+              No Questions Asked.
+            </strong>
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default WhyBrandKlout

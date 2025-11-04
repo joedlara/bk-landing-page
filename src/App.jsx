@@ -8,14 +8,13 @@ import Testimonials from "./components/Testimonials"
 import Stats from "./components/Stats"
 import PracticeLogos from "./components/PracticeLogos"
 import TransformationSection from "./components/TransformationSection"
-import WhyChoose from "./components/WhyChoose"
 import CTA from "./components/CTA"
 import FAQ from "./components/FAQ"
 import Footer from "./components/Footer"
+import GoogleReviews from "./components/GoogleReviews"
+import WhyBrandKlout from "./components/WhyBrandklout"
 
 import "./styles/global.css"
-
-import GoogleReviews from "./components/GoogleReviews"
 
 function App() {
   // Initialize custom hooks
@@ -31,7 +30,7 @@ function App() {
       <Stats />
       <Testimonials />
       <TransformationSection />
-      <WhyChoose />
+      <WhyBrandKlout />
       <GoogleReviews />
       <CTA />
       <FAQ />

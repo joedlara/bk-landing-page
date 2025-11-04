@@ -33,12 +33,17 @@ const Hero = () => {
           Rank Top 3
         </span>
         <br />
-        on AI Search
+        Google & AI Search
       </h1>
 
       <p>
-        Build a genuine 5-star reputation that attracts serious patients who
-        value your expertise and become your biggest advocates.
+        <span style={{ fontWeight: "bold", textDecoration: "underline" }}>
+          Stop paying for clicks.
+        </span>{" "}
+        Start converting Implant & All-on-X searches into scheduled patients.{" "}
+        <span style={{ fontWeight: "bold", textDecoration: "underline" }}>
+          Grow your practice revenue without increasing ads spend.
+        </span>
       </p>
       <div className="hero-cta">
         <a

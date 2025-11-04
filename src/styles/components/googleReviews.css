@@ -29,6 +29,21 @@
   line-height: 1.6;
 }
 
+/* Go High Level Reviews Container */
+.ghl-reviews-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 400px;
+}
+
+.ghl-reviews-container iframe {
+  display: block;
+  width: 100%;
+  min-height: 500px;
+  border: none;
+}
+
 /* Google Rating Summary Card */
 .google-rating-summary {
   max-width: 600px;
