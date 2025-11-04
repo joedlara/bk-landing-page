@@ -59,8 +59,10 @@ const GoogleReviews = () => {
   return (
     <section className="google-reviews-section scroll-fade-in" id="reviews">
       <div className="google-reviews-header">
-        <h2 className="section-title">Trusted by Leading Dental Practices</h2>
-        <p className="section-subtitle">
+        <h2 className="google-reviews-title">
+          Trusted by Leading Dental Practices
+        </h2>
+        <p className="google-reviews-subtitle">
           Don't just take our word for it - see what our clients say
         </p>
       </div>
