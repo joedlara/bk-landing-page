@@ -12,15 +12,10 @@
 .gradient-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.4;
-  animation: float 20s infinite ease-in-out;
-  transition: opacity 0.3s ease;
-}
-
-body.light-mode .gradient-orb {
   opacity: 0.25;
   filter: blur(100px);
+  animation: float 20s infinite ease-in-out;
+  transition: opacity 0.3s ease;
 }
 
 .orb-1 {
@@ -83,22 +78,11 @@ body.light-mode .gradient-orb {
   color: #667eea;
 }
 
-body.light-mode .hero-badge {
-  color: #667eea;
-}
-
 .hero h1 {
   font-size: 72px;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 30px;
-  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-body.light-mode .hero h1 {
   background: linear-gradient(135deg, #000 0%, rgba(0, 0, 0, 0.7) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -107,16 +91,12 @@ body.light-mode .hero h1 {
 
 .hero p {
   font-size: 24px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.6);
   max-width: 800px;
   margin: 0 auto 50px;
 }
 
-body.light-mode .hero p {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-body.light-mode .hero p[style*="font-size: 18px"] {
+.hero p[style*="font-size: 18px"] {
   color: rgba(0, 0, 0, 0.7) !important;
 }
 

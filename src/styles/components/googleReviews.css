@@ -24,13 +24,9 @@
 
 .google-reviews-subtitle {
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.6);
   margin: 0;
   line-height: 1.6;
-}
-
-body.light-mode .google-reviews-subtitle {
-  color: rgba(0, 0, 0, 0.6);
 }
 
 /* Google Rating Summary Card */
@@ -75,12 +71,8 @@ body.light-mode .google-reviews-subtitle {
   align-items: center;
   gap: 6px;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
-  margin-top: 4px;
-}
-
-body.light-mode .rating-source {
   color: rgba(0, 0, 0, 0.6);
+  margin-top: 4px;
 }
 
 .rating-info {
@@ -93,10 +85,6 @@ body.light-mode .rating-source {
 .total-reviews {
   font-size: 18px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-body.light-mode .total-reviews {
   color: rgba(0, 0, 0, 0.9);
 }
 
@@ -147,10 +135,6 @@ body.light-mode .total-reviews {
 
 .google-review-card:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.06);
-}
-
-body.light-mode .google-review-card:hover {
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
@@ -203,14 +187,10 @@ body.light-mode .google-review-card:hover {
   font-size: 16px;
   font-weight: 600;
   margin: 0;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(0, 0, 0, 0.95);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-body.light-mode .reviewer-name {
-  color: rgba(0, 0, 0, 0.95);
 }
 
 .review-meta {
@@ -218,10 +198,6 @@ body.light-mode .reviewer-name {
   align-items: center;
   gap: 10px;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-body.light-mode .review-meta {
   color: rgba(0, 0, 0, 0.5);
 }
 
@@ -254,16 +230,12 @@ body.light-mode .review-meta {
 .review-text {
   font-size: 15px;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.7);
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-body.light-mode .review-text {
-  color: rgba(0, 0, 0, 0.7);
 }
 
 /* Google Badge */
@@ -272,10 +244,10 @@ body.light-mode .review-text {
   align-items: center;
   gap: 6px;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(0, 0, 0, 0.4);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: auto;
   padding-top: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body.light-mode .google-badge {

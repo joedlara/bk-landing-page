@@ -7,16 +7,11 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
-  background: #000000;
-  color: #fff;
+  background: #ffffff;
+  color: #1a1a1a;
   overflow-x: hidden;
   line-height: 1.6;
   transition: background 0.3s ease, color 0.3s ease;
-}
-
-body.light-mode {
-  background: #ffffff;
-  color: #1a1a1a;
 }
 
 /* Animated Background */
@@ -27,28 +22,20 @@ body.light-mode {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: linear-gradient(135deg, #000000 0%, #0a0a0f 50%, #000000 100%);
-  transition: background 0.3s ease;
-}
-
-body.light-mode .background-gradient {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+  transition: background 0.3s ease;
 }
 
 /* Glassmorphic Elements */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-body.light-mode .glass {
   background: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 /* Scroll Animation Classes */
