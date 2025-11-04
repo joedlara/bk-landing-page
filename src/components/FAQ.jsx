@@ -11,8 +11,8 @@ const FAQ = () => {
 
   return (
     <section className="faq-section scroll-fade-in" id="faq">
-      <h2 className="section-title">FAQ's</h2>
-      <p className="section-subtitle">
+      <h2 className="faq-title">FAQ's</h2>
+      <p className="faq-subtitle">
         Full Arch Dentists Ask Before Partnering With Us
       </p>
 

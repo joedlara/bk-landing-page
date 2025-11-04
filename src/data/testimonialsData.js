@@ -6,18 +6,68 @@ export const testimonialsData = [
     avatar: "VK",
     rating: 5,
     videoUrl: "https://www.youtube.com/embed/r92o3HAhRec?si=VmLL3P9ga2AY5d9g",
-    quote:
-      "BrandKlout positioned us for AI search before our competitors knew it existed. Now we're attracting high-value full-mouth reconstruction cases consistently.",
+    metrics: {
+      reviews: {
+        count: 35,
+        platforms: ["yelp", "google", "nextd", "hg"],
+        description: "35 new positive reviews within two weeks",
+        detail: "on Yelp, Google, NextDoor, and Healthgrades.",
+      },
+      rating: {
+        current: 4.8,
+        previous: 4.5,
+        description:
+          "Increased average reputation score from 4.5 stars to 4.8 stars",
+        detail: "within the first 60 days.",
+      },
+      aiRecommendation: {
+        platforms: ["chatgpt", "gemini"],
+        categories: [
+          "best implant",
+          "best all-on-4",
+          "best cosmetic",
+          "best veneer",
+          "best smile makeover",
+        ],
+        description: "Recommended by ChatGPT & Google Gemini",
+        detail:
+          'Picked as "best implant", "best all-on-4", "best cosmetic", "best veneer", and "best smile makeover" dentist in Fountain Valley as of July 8, 2025.',
+      },
+    },
   },
   {
     id: 2,
     name: "Dr. Suang Priyawat",
-    practice: "Chino Hills & Fullerton",
+    practice: "Omnia Dental, Chino Hills & Fullerton",
     avatar: "SP",
     rating: 5,
     videoUrl: "https://www.youtube.com/embed/xS-FwYPS0DY?si=lzmMhud34UYsEaHb",
-    quote:
-      "53 new reviews in 2 weeks. Now the top AI-recommended dentist in our city without a massive marketing budget.",
+    metrics: {
+      reviews: {
+        count: 53,
+        platforms: ["yelp", "google", "nextd", "hg"],
+        description: "53 new positive reviews within two weeks",
+        detail: "on Yelp, Google, NextDoor, and Healthgrades.",
+      },
+      rating: {
+        current: 4.9,
+        previous: 4.6,
+        description:
+          "Increased average reputation score from 4.6 stars to 4.9 stars",
+        detail: "within the first 60 days.",
+      },
+      aiRecommendation: {
+        platforms: ["chatgpt", "gemini"],
+        categories: [
+          "top-rated dentist",
+          "best family dentist",
+          "best cosmetic dentist",
+        ],
+        description: "Recommended by ChatGPT & Google Gemini",
+        detail:
+          'Picked as "top-rated dentist", "best family dentist", and "best cosmetic dentist" in Chino Hills as of July 2025.',
+      },
+    },
   },
   {
     id: 3,
@@ -26,7 +76,27 @@ export const testimonialsData = [
     avatar: "DL",
     rating: 5,
     videoUrl: "https://www.youtube.com/embed/pChw6256klY?si=f1_VWftfJrCeX_cA",
-    quote:
-      "We went from invisible to top 3 on Google, ChatGPT, and Grok for implant training in California. Suddenly, doctors were calling us.",
+    metrics: {
+      reviews: {
+        count: 24,
+        platforms: ["yelp", "google"],
+        description: "24 new positive reviews within two weeks",
+        detail: "on Yelp and Google.",
+      },
+      rating: {
+        current: 4.9,
+        previous: 4.4,
+        description:
+          "Increased average reputation score from 4.4 stars to 4.9 stars",
+        detail: "within the first 60 days.",
+      },
+      aiRecommendation: {
+        platforms: ["grok", "gemini"],
+        categories: ["best implant training", "top dental education"],
+        description: "Recommended by ChatGPT & Google Gemini",
+        detail:
+          "Top 3 on Google, ChatGPT, and Grok for implant training in California.",
+      },
+    },
   },
 ]

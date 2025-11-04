@@ -1,10 +1,41 @@
 import { testimonialsData } from "../data/testimonialsData"
 import "../styles/components/testimonials.css"
 
+// Import platform logos
+import yelpLogo from "../assets/logos/yelp.png"
+import googleLogo from "../assets/logos/google.png"
+import nextdLogo from "../assets/logos/nextd.png"
+import hgLogo from "../assets/logos/hg.png"
+import chatgptLogo from "../assets/logos/chatgpt.png"
+import geminiLogo from "../assets/logos/gemini.png"
+import grokLogo from "../assets/logos/grok.png"
+
 const Testimonials = () => {
+  const platformLogos = {
+    yelp: yelpLogo,
+    google: googleLogo,
+    nextd: nextdLogo,
+    hg: hgLogo,
+    chatgpt: chatgptLogo,
+    gemini: geminiLogo,
+    grok: grokLogo,
+  }
   return (
     <section className="testimonials-section scroll-fade-in" id="testimonials">
-      <h2 className="section-title">Real Clients, Real Results</h2>
+      <h2 className="section-title">
+        Real Clients,
+        <span
+          style={{
+            background: "linear-gradient(90deg, #3B82F6 0%, #9333EA 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
+          {" "}
+          Real Results
+        </span>{" "}
+      </h2>
       <p className="section-subtitle">
         Success stories from practices that transformed their patient
         acquisition strategy.
@@ -36,20 +67,98 @@ const Testimonials = () => {
                 <h4>{testimonial.name}</h4>
                 <p>{testimonial.practice}</p>
               </div>
-              <div className="testimonial-rating">
-                <span style={{ color: "#667eea", fontSize: "18px" }}>★</span>
-                <span
-                  style={{
-                    color: "rgba(255, 255, 255, 0.9)",
-                    fontWeight: "600",
-                    marginLeft: "5px",
-                  }}
-                >
-                  {testimonial.rating}/5
-                </span>
+            </div>
+            <div className="testimonial-metrics">
+              {/* Reviews Metric */}
+              <div className="metric-item">
+                <div className="metric-header">
+                  <span
+                    className="metric-number"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #3B82F6 0%, #9333EA 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    {testimonial.metrics.reviews.count}
+                  </span>
+                  <div className="metric-logos">
+                    {testimonial.metrics.reviews.platforms.map((platform) => (
+                      <img
+                        key={platform}
+                        src={platformLogos[platform]}
+                        alt={platform}
+                        className="platform-logo"
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="metric-description">
+                  Received{" "}
+                  <strong>{testimonial.metrics.reviews.description}</strong>{" "}
+                  {testimonial.metrics.reviews.detail}
+                </p>
+              </div>
+
+              {/* Rating Metric */}
+              <div className="metric-item">
+                <div className="metric-header">
+                  <span
+                    className="metric-number"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #3B82F6 0%, #9333EA 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    {testimonial.metrics.rating.current}
+                  </span>
+                  <div className="metric-stars">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="star">
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <p className="metric-description">
+                  {testimonial.metrics.rating.description}{" "}
+                  {testimonial.metrics.rating.detail}
+                </p>
+              </div>
+
+              {/* AI Recommendation Metric */}
+              <div className="metric-item">
+                <div className="metric-header">
+                  <div className="metric-ai-logos">
+                    {testimonial.metrics.aiRecommendation.platforms.map(
+                      (platform) => (
+                        <img
+                          key={platform}
+                          src={platformLogos[platform]}
+                          alt={platform}
+                          className="platform-logo-large"
+                        />
+                      )
+                    )}
+                  </div>
+                  <span className="metric-ai-badge">
+                    Recommended
+                    <br />
+                    <span className="metric-ai-badge-sub">
+                      by ChatGPT & Google Gemini
+                    </span>
+                  </span>
+                </div>
+                <p className="metric-description">
+                  {testimonial.metrics.aiRecommendation.detail}
+                </p>
               </div>
             </div>
-            <p className="testimonial-text">"{testimonial.quote}"</p>
           </div>
         ))}
       </div>

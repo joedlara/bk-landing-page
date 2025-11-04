@@ -1,4 +1,5 @@
 import "../styles/components/footer.css"
+import logo from "../assets/logos/bk-logo.png"
 
 const Footer = () => {
   return (
@@ -22,6 +23,7 @@ const Footer = () => {
               marginBottom: "30px",
             }}
           >
+            <img src={logo} alt="BrandKlout Logo" style={{ height: "28px" }} />
             <div className="logo" style={{ fontSize: "24px" }}>
               BrandKlout
             </div>

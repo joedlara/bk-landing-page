@@ -7,6 +7,7 @@ import practice4 from "../assets/practices/atwood.png"
 import practice5 from "../assets/practices/oceanic.png"
 import practice6 from "../assets/practices/haven.png"
 import practice7 from "../assets/practices/legacy.png"
+import practice8 from "../assets/practices/ufc.png"
 
 const PracticeLogos = () => {
   const carouselRef = useRef(null)
@@ -47,6 +48,11 @@ const PracticeLogos = () => {
       id: 7,
       name: "Practice Seven",
       logo: practice7,
+    },
+    {
+      id: 8,
+      name: "Practice Eight",
+      logo: practice8,
     },
   ]
 

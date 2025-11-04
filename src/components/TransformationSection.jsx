@@ -101,46 +101,49 @@ const TransformationSection = () => {
     },
   ]
 
-  // Handle scroll to determine active card
+  // Handle scroll to determine active card using intersection observer
   useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return
-
-      const section = sectionRef.current
-      const sectionTop = section.offsetTop
-      const sectionHeight = section.offsetHeight
-      const scrollPosition = window.scrollY + window.innerHeight / 2
-
-      // Calculate which card should be active based on scroll position
-      const relativeScroll = scrollPosition - sectionTop
-      const progressPerCard = sectionHeight / (cards.length + 1)
-
-      const newIndex = Math.min(
-        Math.max(0, Math.floor(relativeScroll / progressPerCard)),
-        cards.length - 1
-      )
-
-      if (newIndex !== activeIndex && newIndex >= 0) {
-        setActiveIndex(newIndex)
-
-        // Play video when card becomes active
-        if (videoRefs.current[newIndex]) {
-          videoRefs.current[newIndex].currentTime = 0
-          videoRefs.current[newIndex].play()
-
-          // Reset video state
-          const newVideoStates = [...videoStates]
-          newVideoStates[newIndex] = false
-          setVideoStates(newVideoStates)
-        }
-      }
+    const observerOptions = {
+      root: null,
+      rootMargin: "-40% 0px -40% 0px", // Trigger when card is in the middle 20% of viewport
+      threshold: 0,
     }
 
-    window.addEventListener("scroll", handleScroll)
-    handleScroll() // Initial check
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = cardRefs.current.indexOf(entry.target)
+          if (index !== -1 && index !== activeIndex) {
+            setActiveIndex(index)
 
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [activeIndex, cards.length, videoStates])
+            // Play video when card becomes active
+            if (videoRefs.current[index]) {
+              videoRefs.current[index].currentTime = 0
+              videoRefs.current[index].play()
+
+              // Reset video state
+              const newVideoStates = [...videoStates]
+              newVideoStates[index] = false
+              setVideoStates(newVideoStates)
+            }
+          }
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions)
+
+    // Observe all cards
+    cardRefs.current.forEach((card) => {
+      if (card) observer.observe(card)
+    })
+
+    return () => {
+      cardRefs.current.forEach((card) => {
+        if (card) observer.unobserve(card)
+      })
+    }
+  }, [activeIndex, videoStates])
 
   // Pause non-active videos
   useEffect(() => {
@@ -175,8 +178,8 @@ const TransformationSection = () => {
     >
       <div className="transformation-scroll-header">
         <h2 className="scroll-section-title">
-          How BrandKlout Positions You for{" "}
-          <span className="gradient-text">Success</span>
+          How BrandKlout Positions
+          <br /> You for <span className="gradient-text">Success</span>
         </h2>
       </div>
 

@@ -1,10 +1,18 @@
 import "../styles/components/header.css"
+import logo from "../assets/logos/bk-logo.png"
 
 const Header = () => {
   return (
     <header id="header">
       <nav>
-        <div className="logo">BrandKlout</div>
+        <div className="logo">
+          <img
+            src={logo}
+            alt="BrandKlout Logo"
+            style={{ height: "32px", marginRight: "8px" }}
+          />
+          BrandKlout
+        </div>
         <ul className="nav-links">
           <li>
             <div className="theme-toggle" id="themeToggle">
