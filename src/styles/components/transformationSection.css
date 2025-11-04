@@ -1,5 +1,5 @@
 /* Transformation Scroll Section - New Overlapping Design */
-body.light-mode .transformation-scroll-section {
+.transformation-scroll-section {
   position: relative;
   padding: 0;
   background: radial-gradient(
@@ -13,18 +13,6 @@ body.light-mode .transformation-scroll-section {
     #ffffff;
 }
 
-.transformation-scroll-section {
-  background: radial-gradient(
-      ellipse at center,
-      rgba(102, 126, 234, 0.12) 0%,
-      rgba(118, 75, 162, 0.08) 30%,
-      rgba(240, 147, 251, 0.05) 50%,
-      rgba(79, 172, 254, 0.04) 70%,
-      rgba(26, 26, 26, 0) 85%
-    ),
-    #1a1a1a;
-}
-
 /* Header */
 .transformation-scroll-header {
   padding: 100px 40px 50px;
@@ -32,14 +20,9 @@ body.light-mode .transformation-scroll-section {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  transition: background 0.3s ease;
-}
-
-body.light-mode .transformation-scroll-header {
   background: rgba(26, 26, 26, 0.95);
   backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
 }
 
 .scroll-section-title {
@@ -47,10 +30,6 @@ body.light-mode .transformation-scroll-header {
   font-weight: 700;
   line-height: 1.2;
   margin: 0;
-  color: #1a1a1a;
-}
-
-body.light-mode .scroll-section-title {
   color: #ffffff;
 }
 
@@ -60,10 +39,6 @@ body.light-mode .scroll-section-title {
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
   max-width: 800px;
-}
-
-body.light-mode .transformation-intro .section-subtitle {
-  color: rgba(0, 0, 0, 0.7);
 }
 
 .gradient-text {
@@ -89,11 +64,12 @@ body.light-mode .transformation-intro .section-subtitle {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  background: #ffffff;
+  background: #1a1a1a;
+  border: 3px solid #333333;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
   border-radius: 24px;
   overflow: hidden;
-  border: 3px solid #e0e0e0;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -101,19 +77,9 @@ body.light-mode .transformation-intro .section-subtitle {
   transform: scale(0.95);
 }
 
-body.light-mode .transformation-card {
-  background: #1a1a1a;
-  border: 3px solid #333333;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-}
-
 .transformation-card.active {
   opacity: 1;
   transform: scale(1);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
-}
-
-body.light-mode .transformation-card.active {
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
 }
 
@@ -137,14 +103,6 @@ body.light-mode .transformation-card.active {
   justify-content: center;
   background: linear-gradient(
     135deg,
-    rgba(102, 126, 234, 0.08) 0%,
-    rgba(118, 75, 162, 0.12) 100%
-  );
-}
-
-body.light-mode .card-text-content {
-  background: linear-gradient(
-    135deg,
     rgba(102, 126, 234, 0.15) 0%,
     rgba(118, 75, 162, 0.2) 100%
   );
@@ -153,14 +111,10 @@ body.light-mode .card-text-content {
 .card-number {
   font-size: 14px;
   font-weight: 700;
-  color: #667eea;
+  color: #8b9eff;
   letter-spacing: 1px;
   margin-bottom: 12px;
   display: block;
-}
-
-body.light-mode .card-number {
-  color: #8b9eff;
 }
 
 .card-title {
@@ -168,23 +122,15 @@ body.light-mode .card-number {
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 12px 0;
-  color: #1a1a1a;
-}
-
-body.light-mode .card-title {
   color: #ffffff;
 }
 
 .card-subtitle {
   font-size: 16px;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   margin: 0 0 24px 0;
   font-weight: 500;
-}
-
-body.light-mode .card-subtitle {
-  color: rgba(255, 255, 255, 0.8);
 }
 
 .card-strategies {
@@ -196,12 +142,8 @@ body.light-mode .card-subtitle {
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.5);
-  margin: 0 0 16px 0;
-}
-
-body.light-mode .strategies-title {
   color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 16px 0;
 }
 
 .strategies-list {
@@ -222,39 +164,24 @@ body.light-mode .strategies-title {
 .strategy-name {
   font-size: 14px;
   font-weight: 600;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #8b9eff 0%, #b19eff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1.4;
 }
 
-body.light-mode .strategy-name {
-  background: linear-gradient(135deg, #8b9eff 0%, #b19eff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .strategy-desc {
   font-size: 13px;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-body.light-mode .strategy-desc {
   color: rgba(255, 255, 255, 0.7);
 }
 
 .card-description {
   font-size: 18px;
   line-height: 1.6;
-  color: rgba(0, 0, 0, 0.6);
-  margin: 0;
-}
-
-body.light-mode .card-description {
   color: rgba(255, 255, 255, 0.7);
+  margin: 0;
 }
 
 /* Video Wrapper */
@@ -279,11 +206,13 @@ body.light-mode .card-description {
   align-items: center;
   gap: 8px;
   padding: 12px 24px;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #1a1a1a;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+
   border-radius: 8px;
-  color: white;
+
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -293,21 +222,10 @@ body.light-mode .card-description {
 }
 
 .replay-button:hover {
-  background: rgba(0, 0, 0, 0.9);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-body.light-mode .replay-button {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(0, 0, 0, 0.1);
-  color: #1a1a1a;
-}
-
-body.light-mode .replay-button:hover {
   background: white;
   border-color: rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive Design */
@@ -491,356 +409,6 @@ body.light-mode .replay-button:hover {
     width: 12px;
     height: 12px;
   }
-}
-
-/* Old accordion styles preserved for backward compatibility */
-/* Transformation Accordion Section */
-.transformation-accordion-section {
-  padding: 100px 40px;
-  max-width: 1400px;
-  margin: 0 auto;
-  position: relative;
-  background: transparent;
-}
-
-.transformation-intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 60px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.transformation-intro .section-title {
-  font-size: 48px;
-  font-weight: 700;
-  margin: 0 0 20px 0;
-  line-height: 1.2;
-}
-
-.transformation-intro .section-subtitle {
-  font-size: 20px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 60px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body.light-mode .transformation-intro .section-subtitle {
-  color: rgba(0, 0, 0, 0.7);
-}
-
-/* Accordion Container */
-.transformation-accordion-container {
-  display: grid;
-  grid-template-columns: 1.8fr 1fr;
-  gap: 50px;
-  align-items: flex-start;
-}
-
-/* Accordion Cards */
-.accordion-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: max-content;
-  max-width: 100%;
-}
-
-.accordion-card {
-  background: #f8f9fb;
-  border-radius: 16px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid transparent;
-  min-width: 450px;
-}
-
-.accordion-card:hover {
-  background: #f0f2f7;
-}
-
-.accordion-card.active {
-  background-image: linear-gradient(#e8ecf4, #e8ecf4),
-    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background: rgba(102, 126, 234, 0.25);
-  border: 4px solid rgba(102, 126, 234, 0.7);
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3),
-    0 0 30px rgba(102, 126, 234, 0.2);
-  transform: translateY(-2px);
-}
-
-body.light-mode .accordion-card {
-  background: #2b2b2b;
-  border-color: transparent;
-}
-
-body.light-mode .accordion-card:hover {
-  background: #333;
-}
-
-body.light-mode .accordion-card.active {
-  background-image: linear-gradient(#2d2d3d, #2d2d3d),
-    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background: rgba(102, 126, 234, 0.25);
-  border: 4px solid rgba(102, 126, 234, 0.7);
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3),
-    0 0 30px rgba(102, 126, 234, 0.2);
-  transform: translateY(-2px);
-}
-
-/* Card Header */
-.accordion-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 24px 28px;
-  gap: 20px;
-}
-
-.accordion-card-header-content {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1;
-}
-
-.card-number {
-  font-size: 14px;
-  font-weight: 600;
-  color: #667eea;
-  letter-spacing: 0.5px;
-}
-
-.accordion-card.active .card-number {
-  color: #5568d3;
-}
-
-body.light-mode .card-number {
-  color: #8b9eff;
-}
-
-body.light-mode .accordion-card.active .card-number {
-  color: #a0b0ff;
-}
-
-.accordion-card-title {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin: 0;
-  color: #1a1a1a;
-}
-
-.accordion-card.active .accordion-card-title {
-  color: #ffffff;
-}
-
-body.light-mode .accordion-card.active .accordion-card-title {
-  color: #000000;
-}
-
-body.light-mode .accordion-card-title {
-  color: white;
-}
-
-.accordion-toggle {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-body.light-mode .accordion-toggle {
-  background: #1a1a1a;
-}
-
-.toggle-icon {
-  color: #667eea;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.toggle-icon.rotated {
-  transform: rotate(180deg);
-}
-
-.accordion-card:hover .accordion-toggle {
-  background: #667eea;
-}
-
-.accordion-card:hover .toggle-icon {
-  color: white;
-}
-
-.accordion-card.active .accordion-toggle {
-  background: #667eea;
-}
-
-.accordion-card.active .toggle-icon {
-  color: white;
-}
-
-/* Card Content */
-.accordion-card-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 0 28px;
-}
-
-.accordion-card-content.expanded {
-  max-height: 500px;
-  padding: 0 28px 28px 28px;
-}
-
-.accordion-card-subtitle {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #666;
-  margin: 0 0 24px 0;
-}
-
-.accordion-card.active .accordion-card-subtitle {
-  color: #aaa;
-}
-
-body.light-mode .accordion-card-subtitle {
-  color: #333;
-}
-
-body.light-mode .accordion-card.active .accordion-card-subtitle {
-  color: #333;
-}
-
-/* Key Strategies Section */
-.key-strategies {
-  margin-top: 20px;
-}
-
-.strategies-heading {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #888;
-  margin: 0 0 16px 0;
-  text-transform: uppercase;
-}
-
-.accordion-card.active .strategies-heading {
-  color: #999;
-}
-
-body.light-mode .strategies-heading {
-  color: #555;
-}
-
-body.light-mode .accordion-card.active .strategies-heading {
-  color: #555;
-}
-
-.strategies-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.strategy-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.strategy-name {
-  font-size: 15px;
-  font-weight: 600;
-  background: red;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.4;
-}
-
-body.light-mode .strategy-name {
-  background: linear-gradient(135deg, #8b9eff 0%, #b19eff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.strategy-description {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #999;
-}
-
-.accordion-card.active .strategy-description {
-  color: #999;
-}
-
-body.light-mode .strategy-description {
-  color: #999;
-}
-
-body.light-mode .accordion-card.active .strategy-description {
-  color: #333;
-}
-
-/* Video Display */
-.video-display {
-  position: sticky;
-  top: 100px;
-  height: fit-content;
-}
-
-.video-wrapper {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #000;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-body.light-mode .video-wrapper {
-  background: #000;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-}
-
-.video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-  background: #000;
-}
-
-.video-container.active {
-  opacity: 1;
-  visibility: visible;
-  animation: wipeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.transformation-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 /* Wipe Animation */
