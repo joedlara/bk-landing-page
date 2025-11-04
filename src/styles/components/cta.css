@@ -1,19 +1,20 @@
 /* CTA Section */
 .cta-section {
-  padding: 120px 0;
+  padding: 120px 10%;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
   position: relative;
+  overflow: hidden;
 }
 
 .cta-section::before {
   content: "";
   position: absolute;
   top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120%;
+  left: 0;
+  width: 100%;
+  max-width: 80vw;
   height: calc(100% + 200px);
   background: linear-gradient(
     180deg,
@@ -33,6 +34,8 @@
 
 .cta-box {
   padding: 80px 60px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .cta-section h2 {
@@ -40,33 +43,84 @@
   font-weight: 700;
   margin-bottom: 25px;
   line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .cta-section p {
   font-size: 20px;
   color: rgba(0, 0, 0, 0.6);
   margin-bottom: 40px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-/* CTA Video Container */
+/* CTA Video Container - Unique CTA-specific class names */
 .cta-video-container {
   padding-top: 50px;
-  max-width: 800px;
+  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.video-wrapper {
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+/* CTA Video Card with Border */
+.cta-video-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.video-wrapper iframe {
+/* Gradient border effect for CTA video card */
+.cta-video-card::before {
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 450px;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  padding: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.video-label {
+.cta-video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+/* CTA Video Wrapper */
+.cta-video-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  z-index: 2;
+}
+
+/* CTA Video Iframe */
+.cta-video-iframe {
+  display: block;
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 16px;
+}
+
+/* CTA Video Label (if needed) */
+.cta-video-label {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -78,16 +132,105 @@
   font-weight: 600;
   z-index: 10;
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  max-width: calc(100% - 40px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .cta-video-container {
+    max-width: 900px;
+  }
+
+  .cta-video-iframe {
+    height: 500px;
+  }
 }
 
 @media (max-width: 768px) {
-  .video-wrapper iframe {
+  .cta-section {
+    padding: 80px 20px;
+  }
+
+  .cta-box {
+    padding: 60px 20px;
+  }
+
+  .cta-section h2 {
+    font-size: 36px;
+  }
+
+  .cta-section p {
+    font-size: 18px;
+  }
+
+  .cta-video-container {
+    padding-top: 40px;
+    max-width: 100%;
+  }
+
+  .cta-video-card {
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  .cta-video-card::before {
+    border-radius: 20px;
+    padding: 2px;
+  }
+
+  .cta-video-wrapper {
+    border-radius: 12px;
+  }
+
+  .cta-video-iframe {
     height: 350px;
+    border-radius: 12px;
   }
 }
 
 @media (max-width: 468px) {
-  .video-wrapper iframe {
+  .cta-section {
+    padding: 60px 15px;
+  }
+
+  .cta-box {
+    padding: 40px 15px;
+  }
+
+  .cta-section h2 {
+    font-size: 28px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+  }
+
+  .cta-video-container {
+    padding-top: 30px;
+  }
+
+  .cta-video-card {
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .cta-video-card::before {
+    border-radius: 16px;
+  }
+
+  .cta-video-wrapper {
+    border-radius: 10px;
+  }
+
+  .cta-video-iframe {
     height: 250px;
+    border-radius: 10px;
+  }
+
+  .cta-video-label {
+    font-size: 12px;
+    padding: 6px 16px;
+    bottom: 15px;
+    left: 15px;
   }
 }

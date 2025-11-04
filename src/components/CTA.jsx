@@ -39,16 +39,21 @@ const CTA = () => {
             Prequalify Your Practice
           </a>
         </div>
+
+        {/* Video Card with CTA-specific class names */}
         <div className="cta-video-container">
-          <div className="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/qxXc1GruLLY?si=rSh3W-e5sy79awWj"
-              title="BrandKlout Introduction"
-              frameBorder="0"
-              modestBranding="1"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
+          <div className="cta-video-card">
+            <div className="cta-video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/qxXc1GruLLY?si=rSh3W-e5sy79awWj"
+                title="BrandKlout Introduction"
+                frameBorder="0"
+                modestBranding="1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="cta-video-iframe"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
