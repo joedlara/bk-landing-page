@@ -1,3 +1,494 @@
+/* Transformation Scroll Section - New Overlapping Design */
+.transformation-scroll-section {
+  position: relative;
+  min-height: 300vh; /* Creates scroll space for 4 cards */
+  padding: 0;
+  background: #f5f5f5;
+}
+
+body.light-mode .transformation-scroll-section {
+  background: #e4e4e4;
+}
+
+/* Header */
+.transformation-scroll-header {
+  padding: 100px 40px 60px;
+  text-align: center;
+  top: 0;
+  z-index: 100;
+  background: #e4e4e4;
+  transition: background 0.3s ease;
+}
+
+body.light-mode .transformation-scroll-header {
+  background: #e4e4e4;
+}
+
+.scroll-section-title {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+body.light-mode .scroll-section-title {
+  color: #ffffff;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Cards Container */
+.transformation-scroll-container {
+  position: sticky;
+  top: 240px;
+  max-width: 1400px;
+  margin: 60px auto 0;
+  padding: 0 40px;
+  height: calc(70vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Individual Card */
+.transformation-card {
+  position: absolute;
+  width: 100%;
+  max-width: 1200px;
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 3px solid #e0e0e0;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+}
+
+body.light-mode .transformation-card {
+  background: #1a1a1a;
+  border: 3px solid #333333;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.transformation-card.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.transformation-card.passed {
+  opacity: 0;
+  transform: translateY(-80px) scale(0.95);
+  pointer-events: none;
+}
+
+/* Card Content */
+.card-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  min-height: 500px;
+  gap: 0;
+}
+
+.card-text-content {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.08) 0%,
+    rgba(118, 75, 162, 0.12) 100%
+  );
+}
+
+body.light-mode .card-text-content {
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.15) 0%,
+    rgba(118, 75, 162, 0.2) 100%
+  );
+}
+
+.card-number {
+  font-size: 14px;
+  font-weight: 700;
+  color: #667eea;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+body.light-mode .card-number {
+  color: #8b9eff;
+}
+
+.card-title {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
+  color: #1a1a1a;
+}
+
+body.light-mode .card-title {
+  color: #ffffff;
+}
+
+.card-subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0 0 24px 0;
+  font-weight: 500;
+}
+
+body.light-mode .card-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card-strategies {
+  margin-top: 16px;
+}
+
+.strategies-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0 0 16px 0;
+}
+
+body.light-mode .strategies-title {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.strategies-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.strategy-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.strategy-name {
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.4;
+}
+
+body.light-mode .strategy-name {
+  background: linear-gradient(135deg, #8b9eff 0%, #b19eff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.strategy-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+body.light-mode .strategy-desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card-description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+body.light-mode .card-description {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Video Wrapper */
+.card-video-wrapper {
+  position: relative;
+  background: #000000;
+  overflow: hidden;
+}
+
+.card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Replay Button */
+.replay-button {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.replay-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .replay-button {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #1a1a1a;
+}
+
+body.light-mode .replay-button:hover {
+  background: white;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll Spacer */
+.scroll-spacer {
+  height: 20vh;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .transformation-scroll-section {
+    min-height: 400vh;
+  }
+
+  .transformation-scroll-header {
+    padding: 80px 40px 40px;
+  }
+
+  .scroll-section-title {
+    font-size: 42px;
+  }
+
+  .card-content-wrapper {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .card-text-content {
+    padding: 40px;
+    order: 2;
+  }
+
+  .card-video-wrapper {
+    order: 1;
+    min-height: 350px;
+  }
+
+  .transformation-scroll-container {
+    top: 180px;
+    margin-top: 50px;
+    height: calc(80vh - 100px);
+  }
+
+  .card-title {
+    font-size: 32px;
+  }
+
+  .card-subtitle {
+    font-size: 15px;
+  }
+
+  .strategy-name {
+    font-size: 13px;
+  }
+
+  .strategy-desc {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .transformation-scroll-section {
+    min-height: 350vh;
+  }
+
+  .transformation-scroll-header {
+    padding: 60px 20px 30px;
+  }
+
+  .scroll-section-title {
+    font-size: 28px;
+  }
+
+  .transformation-scroll-container {
+    padding: 0 20px;
+    top: 140px;
+    margin-top: 40px;
+    height: auto;
+    min-height: 600px;
+  }
+
+  .transformation-card {
+    border-radius: 16px;
+    border-width: 2px;
+  }
+
+  .card-text-content {
+    padding: 30px;
+  }
+
+  .card-title {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .card-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .card-number {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .strategies-title {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  .strategy-name {
+    font-size: 13px;
+  }
+
+  .strategy-desc {
+    font-size: 12px;
+  }
+
+  .card-video-wrapper {
+    min-height: 280px;
+  }
+
+  .replay-button {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .replay-button svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .transformation-scroll-section {
+    min-height: 320vh;
+  }
+
+  .transformation-scroll-header {
+    padding: 50px 15px 25px;
+  }
+
+  .scroll-section-title {
+    font-size: 24px;
+  }
+
+  .transformation-scroll-container {
+    padding: 0 15px;
+    top: 110px;
+    margin-top: 30px;
+    min-height: 550px;
+  }
+
+  .card-text-content {
+    padding: 24px;
+  }
+
+  .card-title {
+    font-size: 22px;
+  }
+
+  .card-subtitle {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .card-number {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .strategies-title {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+
+  .card-strategies {
+    margin-top: 12px;
+  }
+
+  .strategies-list {
+    gap: 10px;
+  }
+
+  .strategy-name {
+    font-size: 12px;
+  }
+
+  .strategy-desc {
+    font-size: 11px;
+  }
+
+  .card-video-wrapper {
+    min-height: 220px;
+  }
+
+  .replay-button {
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+
+  .replay-button svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .scroll-spacer {
+    height: 10vh;
+  }
+}
+
+/* Old accordion styles preserved for backward compatibility */
 /* Transformation Accordion Section */
 .transformation-accordion-section {
   padding: 100px 40px;
@@ -353,383 +844,4 @@ body.light-mode .video-wrapper {
   100% {
     clip-path: inset(0 0 0 0);
   }
-}
-
-/* Alternative wipe animations you can use */
-@keyframes wipeInVertical {
-  0% {
-    clip-path: inset(100% 0 0 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes wipeInDiagonal {
-  0% {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  }
-  100% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-}
-
-@keyframes wipeInCircle {
-  0% {
-    clip-path: circle(0% at 50% 50%);
-  }
-  100% {
-    clip-path: circle(150% at 50% 50%);
-  }
-}
-
-/* Replay Button */
-.replay-button {
-  position: absolute;
-  bottom: 24px;
-  right: 24px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  color: white;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 10;
-}
-
-.replay-button:hover {
-  background: rgba(0, 0, 0, 0.9);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.replay-button svg {
-  flex-shrink: 0;
-}
-
-body.light-mode .replay-button {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(0, 0, 0, 0.1);
-  color: #1a1a1a;
-}
-
-body.light-mode .replay-button:hover {
-  background: white;
-  border-color: rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .transformation-accordion-container {
-    gap: 40px;
-    grid-template-columns: 1.5fr 1fr;
-  }
-
-  .accordion-card {
-    min-width: 400px;
-  }
-
-  .transformation-intro .section-title {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .transformation-accordion-container {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .video-display {
-    position: relative;
-    top: 0;
-    order: -1; /* This moves video above cards on mobile */
-  }
-
-  .accordion-cards {
-    order: 1;
-    width: 100%;
-  }
-
-  .accordion-card {
-    min-width: unset;
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .transformation-accordion-section {
-    padding: 60px 20px;
-  }
-
-  .transformation-intro .section-title {
-    font-size: 32px;
-  }
-
-  .transformation-intro .section-subtitle {
-    font-size: 16px;
-  }
-
-  .video-wrapper {
-    border-radius: 16px;
-  }
-
-  .replay-button {
-    bottom: 16px;
-    right: 16px;
-    padding: 8px 16px;
-    font-size: 12px;
-  }
-
-  .replay-button svg {
-    width: 14px;
-    height: 14px;
-  }
-
-  .accordion-card-header {
-    padding: 20px 20px;
-  }
-
-  .accordion-card-title {
-    font-size: 20px;
-  }
-
-  .card-number {
-    font-size: 12px;
-  }
-
-  .accordion-card-content.expanded {
-    padding: 0 20px 20px 20px;
-    max-height: 600px;
-  }
-
-  .accordion-card-subtitle {
-    font-size: 15px;
-  }
-
-  .strategies-heading {
-    font-size: 11px;
-  }
-
-  .strategy-name {
-    font-size: 14px;
-  }
-
-  .strategy-description {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 480px) {
-  .transformation-accordion-section {
-    padding: 40px 15px;
-  }
-
-  .transformation-intro .section-title {
-    font-size: 26px;
-  }
-
-  .transformation-intro .section-subtitle {
-    font-size: 15px;
-  }
-
-  .replay-button {
-    bottom: 12px;
-    right: 12px;
-    padding: 6px 14px;
-    font-size: 11px;
-    gap: 6px;
-  }
-
-  .replay-button svg {
-    width: 12px;
-    height: 12px;
-  }
-
-  .accordion-card-header {
-    padding: 16px;
-  }
-
-  .accordion-card-title {
-    font-size: 18px;
-  }
-
-  .card-number {
-    font-size: 11px;
-  }
-
-  .accordion-toggle {
-    width: 28px;
-    height: 28px;
-  }
-
-  .toggle-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .accordion-card-content.expanded {
-    padding: 0 16px 16px 16px;
-    max-height: 700px;
-  }
-
-  .accordion-card-subtitle {
-    font-size: 14px;
-  }
-
-  .strategies-heading {
-    font-size: 10px;
-  }
-
-  .strategy-name {
-    font-size: 13px;
-  }
-
-  .strategy-description {
-    font-size: 12px;
-  }
-}
-
-/* Old styles preserved for backward compatibility */
-/* Transformation Section */
-.transformation-section {
-  padding: 100px 40px;
-  max-width: 100%;
-  margin: 0 auto;
-  position: relative;
-  background: linear-gradient(
-    180deg,
-    rgba(102, 126, 234, 0.08) 0%,
-    rgba(118, 75, 162, 0.12) 50%,
-    rgba(102, 126, 234, 0.08) 100%
-  );
-}
-
-body.light-mode .transformation-section {
-  background: linear-gradient(
-    180deg,
-    rgba(102, 126, 234, 0.06) 0%,
-    rgba(118, 75, 162, 0.1) 50%,
-    rgba(102, 126, 234, 0.06) 100%
-  );
-}
-
-.transformation-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 100%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(102, 126, 234, 0.15) 0%,
-    transparent 70%
-  );
-  pointer-events: none;
-  z-index: 0;
-}
-
-.transformation-section > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Scroll Animation Section */
-.transformation-scroll-section {
-  position: relative;
-  background: linear-gradient(
-    180deg,
-    rgba(102, 126, 234, 0.08) 0%,
-    rgba(118, 75, 162, 0.12) 50%,
-    rgba(102, 126, 234, 0.08) 100%
-  );
-  padding: 100px 40px;
-}
-
-body.light-mode .transformation-scroll-section {
-  background: linear-gradient(
-    180deg,
-    rgba(102, 126, 234, 0.06) 0%,
-    rgba(118, 75, 162, 0.1) 50%,
-    rgba(102, 126, 234, 0.06) 100%
-  );
-}
-
-.transformation-scroll-wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.transformation-scroll-item {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  min-height: 100vh;
-  padding: 80px 0;
-}
-
-.transformation-scroll-content {
-  display: flex;
-  align-items: center;
-}
-
-.step-text {
-  max-width: 600px;
-}
-
-.step-number-badge {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 600;
-  color: #667eea;
-  background: rgba(102, 126, 234, 0.1);
-  padding: 6px 16px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-}
-
-body.light-mode .step-number-badge {
-  background: rgba(102, 126, 234, 0.15);
-}
-
-.step-title {
-  font-size: 56px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.1;
-}
-
-.step-subtitle {
-  font-size: 22px;
-  font-weight: 500;
-  margin-bottom: 15px;
-  line-height: 1.4;
-}
-
-.step-description {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
-}
-
-body.light-mode .step-description {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.transformation-scroll-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

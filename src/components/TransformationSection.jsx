@@ -8,11 +8,11 @@ import video3 from "../assets/AI_search_bar.mp4"
 import video4 from "../assets/AI_search_map.mp4"
 
 const TransformationSection = () => {
-  const [activeCard, setActiveCard] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0)
   const [videoStates, setVideoStates] = useState([false, false, false, false])
-  const [hasPlayedInitial, setHasPlayedInitial] = useState(false)
-  const videoRefs = useRef([])
   const sectionRef = useRef(null)
+  const videoRefs = useRef([])
+  const cardRefs = useRef([])
 
   const cards = [
     {
@@ -101,25 +101,55 @@ const TransformationSection = () => {
     },
   ]
 
-  const handleCardClick = (index) => {
-    // Don't allow closing the currently active card
-    if (activeCard === index) {
-      return
+  // Handle scroll to determine active card
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return
+
+      const section = sectionRef.current
+      const sectionTop = section.offsetTop
+      const sectionHeight = section.offsetHeight
+      const scrollPosition = window.scrollY + window.innerHeight / 2
+
+      // Calculate which card should be active based on scroll position
+      const relativeScroll = scrollPosition - sectionTop
+      const progressPerCard = sectionHeight / (cards.length + 1)
+
+      const newIndex = Math.min(
+        Math.max(0, Math.floor(relativeScroll / progressPerCard)),
+        cards.length - 1
+      )
+
+      if (newIndex !== activeIndex && newIndex >= 0) {
+        setActiveIndex(newIndex)
+
+        // Play video when card becomes active
+        if (videoRefs.current[newIndex]) {
+          videoRefs.current[newIndex].currentTime = 0
+          videoRefs.current[newIndex].play()
+
+          // Reset video state
+          const newVideoStates = [...videoStates]
+          newVideoStates[newIndex] = false
+          setVideoStates(newVideoStates)
+        }
+      }
     }
 
-    setActiveCard(index)
+    window.addEventListener("scroll", handleScroll)
+    handleScroll() // Initial check
 
-    // Play video when card is opened
-    if (videoRefs.current[index]) {
-      videoRefs.current[index].currentTime = 0
-      videoRefs.current[index].play()
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [activeIndex, cards.length, videoStates])
 
-      // Update video state to playing
-      const newVideoStates = [...videoStates]
-      newVideoStates[index] = false
-      setVideoStates(newVideoStates)
-    }
-  }
+  // Pause non-active videos
+  useEffect(() => {
+    videoRefs.current.forEach((video, index) => {
+      if (video && index !== activeIndex) {
+        video.pause()
+      }
+    })
+  }, [activeIndex])
 
   const handleVideoEnd = (index) => {
     const newVideoStates = [...videoStates]
@@ -137,80 +167,62 @@ const TransformationSection = () => {
     }
   }
 
-  // Auto-play first video when section enters viewport
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasPlayedInitial) {
-            // Play the first video when section comes into view
-            if (videoRefs.current[0]) {
-              videoRefs.current[0].currentTime = 0
-              videoRefs.current[0].play()
-              setHasPlayedInitial(true)
-            }
-          }
-        })
-      },
-      {
-        threshold: 0.3, // Trigger when 30% of section is visible
-      }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
-      }
-    }
-  }, [hasPlayedInitial])
-
-  useEffect(() => {
-    // Pause all videos except the active one
-    videoRefs.current.forEach((video, index) => {
-      if (video && index !== activeCard) {
-        video.pause()
-      }
-    })
-  }, [activeCard])
-
   return (
     <section
       ref={sectionRef}
-      className="transformation-accordion-section"
+      className="transformation-scroll-section"
       id="transformation"
     >
-      <div className="transformation-intro">
-        <h2 className="section-title">Your Future Practice</h2>
-        <p className="section-subtitle">
-          Empower your dental team with modern tools and smart automation that
-          attract more patients, simplify workflows, and elevate every aspect of
-          your practice.
-        </p>
+      <div className="transformation-scroll-header">
+        <h2 className="scroll-section-title">
+          How BrandKlout Positions You for{" "}
+          <span className="gradient-text">Success</span>
+        </h2>
       </div>
 
-      <div className="transformation-accordion-container">
-        <div className="video-display">
-          <div className="video-wrapper">
-            {cards.map((card, index) => (
-              <div
-                key={card.id}
-                className={`video-container ${
-                  activeCard === index ? "active" : ""
-                }`}
-              >
+      <div className="transformation-scroll-container">
+        {cards.map((card, index) => (
+          <div
+            key={card.id}
+            ref={(el) => (cardRefs.current[index] = el)}
+            className={`transformation-card ${
+              index <= activeIndex ? "active" : ""
+            } ${index < activeIndex ? "passed" : ""}`}
+            style={{
+              zIndex: cards.length - index,
+            }}
+          >
+            <div className="card-content-wrapper">
+              <div className="card-text-content">
+                <span className="card-number">{card.number}</span>
+                <h3 className="card-title">{card.title}</h3>
+                <p className="card-subtitle">{card.subtitle}</p>
+
+                <div className="card-strategies">
+                  <h4 className="strategies-title">Key Strategies</h4>
+                  <ul className="strategies-list">
+                    {card.strategies.map((strategy, idx) => (
+                      <li key={idx} className="strategy-item">
+                        <span className="strategy-name">{strategy.name}</span>
+                        <span className="strategy-desc">
+                          {strategy.description}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="card-video-wrapper">
                 <video
                   ref={(el) => (videoRefs.current[index] = el)}
                   src={card.videoSrc}
                   muted
                   playsInline
-                  className="transformation-video"
+                  className="card-video"
                   onEnded={() => handleVideoEnd(index)}
                 />
-                {videoStates[index] && activeCard === index && (
+                {videoStates[index] && activeIndex === index && (
                   <button
                     className="replay-button"
                     onClick={(e) => {
@@ -237,80 +249,13 @@ const TransformationSection = () => {
                   </button>
                 )}
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="accordion-cards">
-          {cards.map((card, index) => (
-            <div
-              key={card.id}
-              className={`accordion-card ${
-                activeCard === index ? "active" : ""
-              }`}
-              onClick={() => handleCardClick(index)}
-            >
-              <div className="accordion-card-header">
-                <div className="accordion-card-header-content">
-                  <span className="card-number">{card.number}</span>
-                  <h3 className="accordion-card-title">{card.title}</h3>
-                </div>
-                <div className="accordion-toggle">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`toggle-icon ${
-                      activeCard === index ? "rotated" : ""
-                    }`}
-                  >
-                    <path
-                      d="M6 9L12 15L18 9"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div
-                className={`accordion-card-content ${
-                  activeCard === index ? "expanded" : ""
-                }`}
-              >
-                <p className="accordion-card-subtitle">{card.subtitle}</p>
-                <div className="key-strategies">
-                  <h4 className="strategies-heading">KEY STRATEGIES</h4>
-                  <div className="strategies-list">
-                    {card.strategies.map((strategy, idx) => (
-                      <div key={idx} className="strategy-item">
-                        <span
-                          style={{
-                            background:
-                              "linear-gradient(90deg, #3B82F6 0%, #9333EA 100%)",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                            backgroundClip: "text",
-                          }}
-                          className="strategy-name"
-                        >
-                          {strategy.name}
-                        </span>
-                        <span className="strategy-description">
-                          {strategy.description}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
+
+      {/* Spacer to allow proper scrolling */}
+      <div className="scroll-spacer" />
     </section>
   )
 }
