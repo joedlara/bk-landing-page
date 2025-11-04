@@ -9,13 +9,8 @@ header {
 }
 
 header.scrolled {
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-body.light-mode header.scrolled {
   background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -35,6 +30,8 @@ nav {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
@@ -45,68 +42,14 @@ nav {
 }
 
 .nav-links a {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.7);
   text-decoration: none;
   font-size: 15px;
   transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #fff;
-}
-
-body.light-mode .nav-links a {
-  color: rgba(0, 0, 0, 0.7);
-}
-
-body.light-mode .nav-links a:hover {
   color: #000;
-}
-
-.theme-toggle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: rotate(180deg);
-}
-
-body.light-mode .theme-toggle {
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-body.light-mode .theme-toggle:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.theme-icon {
-  width: 24px;
-  height: 24px;
-  transition: all 0.3s ease;
-}
-
-.sun-icon {
-  display: none;
-}
-
-body.light-mode .sun-icon {
-  display: block;
-}
-
-body.light-mode .moon-icon {
-  display: none;
 }
 
 .cta-button {
@@ -146,17 +89,17 @@ body.light-mode .moon-icon {
 
 /* Glassmorphism button (Book a Demo in hero) */
 .cta-button-glass {
-  background: rgba(102, 126, 234, 0.15);
+  background: rgba(102, 126, 234, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 2px solid rgba(102, 126, 234, 0.5);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2),
-    0 0 20px rgba(102, 126, 234, 0.15);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3),
+    0 0 20px rgba(102, 126, 234, 0.1);
   padding: 12px 28px;
   border-radius: 50px;
-  color: #fff !important;
+  color: #667eea !important;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -164,10 +107,10 @@ body.light-mode .moon-icon {
 }
 
 .cta-button-glass:hover {
-  background: rgba(102, 126, 234, 0.25);
+  background: rgba(102, 126, 234, 0.3);
   border: 2px solid rgba(102, 126, 234, 0.7);
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3),
-    0 0 30px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4),
+    0 0 30px rgba(102, 126, 234, 0.15);
   transform: translateY(-2px);
 }
 
@@ -178,32 +121,8 @@ body.light-mode .moon-icon {
   }
 }
 
-.cta-button-glass:hover {
-  background: rgba(102, 126, 234, 0.25);
-  border-color: rgba(102, 126, 234, 0.5);
-  transform: translateY(-2px);
-}
-
-/* Light mode glassmorphism - stronger contrast */
-body.light-mode .cta-button-glass {
-  background: rgba(102, 126, 234, 0.2);
-  border: 2px solid rgba(102, 126, 234, 0.5);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3),
-    0 0 20px rgba(102, 126, 234, 0.1);
-  color: #667eea !important;
-  font-weight: 700;
-}
-
-body.light-mode .cta-button-glass:hover {
-  background: rgba(102, 126, 234, 0.3);
-  border: 2px solid rgba(102, 126, 234, 0.7);
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4),
-    0 0 30px rgba(102, 126, 234, 0.15);
-}
-
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
-  /* Header stays the same - keep theme toggle and Book a Demo button */
   header {
     padding: 15px 0;
   }
@@ -223,16 +142,6 @@ body.light-mode .cta-button-glass:hover {
   /* Hide Book a Demo button in header on mobile */
   .nav-links .cta-button {
     display: none;
-  }
-
-  .theme-toggle {
-    width: 44px;
-    height: 44px;
-  }
-
-  .theme-icon {
-    width: 20px;
-    height: 20px;
   }
 
   /* Hero buttons on mobile */
