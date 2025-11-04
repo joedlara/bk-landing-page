@@ -105,7 +105,7 @@ const TransformationSection = () => {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: "-40% 0px -40% 0px", // Trigger when card is in the middle 20% of viewport
+      rootMargin: "-60% 0px -60% 0px", // Trigger when card is in the middle 20% of viewport
       threshold: 0,
     }
 

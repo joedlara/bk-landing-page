@@ -1,6 +1,6 @@
 /* CTA Section */
 .cta-section {
-  padding: 120px 40px;
+  padding: 120px 0;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -78,4 +78,16 @@
   font-weight: 600;
   z-index: 10;
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+@media (max-width: 768px) {
+  .video-wrapper iframe {
+    height: 350px;
+  }
+}
+
+@media (max-width: 468px) {
+  .video-wrapper iframe {
+    height: 250px;
+  }
 }
