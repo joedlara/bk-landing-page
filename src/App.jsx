@@ -14,6 +14,7 @@ import FAQ from "./components/FAQ"
 import Footer from "./components/Footer"
 
 import "./styles/global.css"
+import "./styles/masterMobileFix.css"
 import GoogleReviews from "./components/GoogleReviews"
 
 function App() {

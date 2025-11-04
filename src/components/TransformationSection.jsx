@@ -116,15 +116,28 @@ const TransformationSection = () => {
           if (index !== -1 && index !== activeIndex) {
             setActiveIndex(index)
 
-            // Play video when card becomes active
+            // Play video when card becomes active with mobile-friendly handling
             if (videoRefs.current[index]) {
-              videoRefs.current[index].currentTime = 0
-              videoRefs.current[index].play()
+              const video = videoRefs.current[index]
+              video.currentTime = 0
+
+              // Use promise-based play with error handling for mobile
+              const playPromise = video.play()
+
+              if (playPromise !== undefined) {
+                playPromise.catch((error) => {
+                  // Auto-play was prevented (common on mobile)
+                  console.log("Video autoplay prevented:", error)
+                  // Optionally, you could show a play button here
+                })
+              }
 
               // Reset video state
-              const newVideoStates = [...videoStates]
-              newVideoStates[index] = false
-              setVideoStates(newVideoStates)
+              setVideoStates((prev) => {
+                const newStates = [...prev]
+                newStates[index] = false
+                return newStates
+              })
             }
           }
         }
@@ -143,7 +156,27 @@ const TransformationSection = () => {
         if (card) observer.unobserve(card)
       })
     }
-  }, [activeIndex, videoStates])
+  }, [activeIndex]) // Removed videoStates dependency to prevent observer recreation
+
+  // Initial play for first video when component mounts
+  useEffect(() => {
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      if (videoRefs.current[0] && activeIndex === 0) {
+        const video = videoRefs.current[0]
+        video.currentTime = 0
+        const playPromise = video.play()
+
+        if (playPromise !== undefined) {
+          playPromise.catch((error) => {
+            console.log("Initial video autoplay prevented:", error)
+          })
+        }
+      }
+    }, 300)
+
+    return () => clearTimeout(timer)
+  }, []) // Only run once on mount
 
   // Pause non-active videos
   useEffect(() => {
@@ -155,18 +188,30 @@ const TransformationSection = () => {
   }, [activeIndex])
 
   const handleVideoEnd = (index) => {
-    const newVideoStates = [...videoStates]
-    newVideoStates[index] = true
-    setVideoStates(newVideoStates)
+    setVideoStates((prev) => {
+      const newStates = [...prev]
+      newStates[index] = true
+      return newStates
+    })
   }
 
   const handleReplay = (index) => {
     if (videoRefs.current[index]) {
-      videoRefs.current[index].currentTime = 0
-      videoRefs.current[index].play()
-      const newVideoStates = [...videoStates]
-      newVideoStates[index] = false
-      setVideoStates(newVideoStates)
+      const video = videoRefs.current[index]
+      video.currentTime = 0
+      const playPromise = video.play()
+
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.log("Replay prevented:", error)
+        })
+      }
+
+      setVideoStates((prev) => {
+        const newStates = [...prev]
+        newStates[index] = false
+        return newStates
+      })
     }
   }
 
@@ -222,8 +267,10 @@ const TransformationSection = () => {
                   src={card.videoSrc}
                   muted
                   playsInline
+                  preload="auto"
                   className="card-video"
                   onEnded={() => handleVideoEnd(index)}
+                  webkit-playsinline="true"
                 />
                 {videoStates[index] && activeIndex === index && (
                   <button
