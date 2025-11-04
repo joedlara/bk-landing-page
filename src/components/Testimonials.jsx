@@ -50,6 +50,7 @@ const Testimonials = () => {
             <div className="testimonials-video-container">
               <iframe
                 width="100%"
+                height="350"
                 src={testimonial.videoUrl}
                 title={`${testimonial.name} Testimonial`}
                 frameBorder="0"
