@@ -61,19 +61,19 @@
 }
 
 .final-cta-title {
-  font-size: 3.5rem;
+  font-size: var(--text-4xl);
   font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  color: #000;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: black;
 }
 
 .final-cta-subtitle {
-  font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.7);
-  margin-bottom: 2.5rem;
-  line-height: 1.6;
-  max-width: 50rem;
+  font-size: var(--text-xl);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: var(--spacing-xl);
+  max-width: var(--container-text);
   margin-left: auto;
   margin-right: auto;
 }
@@ -88,7 +88,7 @@
 
 /* CTA Button */
 .final-cta-button {
-  display: inline-flex;
+  display: inline-block;
   align-items: center;
   gap: 0.75rem;
   padding: 1.25rem 3rem;

@@ -48,7 +48,6 @@ const CTA = () => {
                 src="https://www.youtube.com/embed/qxXc1GruLLY?si=rSh3W-e5sy79awWj"
                 title="BrandKlout Introduction"
                 frameBorder="0"
-                modestBranding="1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 className="cta-video-iframe"

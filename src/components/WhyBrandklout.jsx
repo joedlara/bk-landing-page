@@ -1,4 +1,4 @@
-import "../styles/components/whyBrandKlout.css"
+import "../styles/components/whyBrandklout.css"
 
 const WhyBrandKlout = () => {
   const brandKloutFeatures = [
@@ -170,7 +170,6 @@ const WhyBrandKlout = () => {
               className="guarantee-cta"
             >
               Get Started Today
-              <span className="cta-arrow">→</span>
             </a>
           </div>
         </div>
