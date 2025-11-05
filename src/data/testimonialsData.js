@@ -82,7 +82,7 @@ export const testimonialsData = [
       reviews: {
         count: 15,
         platforms: ["yelp", "google"],
-        description: "15 new positive reviews within two weeks",
+        description: `15 new positive reviews within two weeks`,
         detail: "on Yelp and Google.",
       },
       rating: {

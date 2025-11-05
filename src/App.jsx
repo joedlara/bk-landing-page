@@ -6,7 +6,7 @@ import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Testimonials from "./components/Testimonials"
 import Stats from "./components/Stats"
-import PracticeLogos from "./components/PracticeLogos"
+
 import TransformationSection from "./components/TransformationSection"
 import CTA from "./components/CTA"
 import FAQ from "./components/FAQ"
@@ -15,6 +15,7 @@ import GoogleReviews from "./components/GoogleReviews"
 import WhyBrandKlout from "./components/WhyBrandklout"
 
 import "./styles/global.css"
+import PracticeLogos from "./components/PracticeLogos"
 
 function App() {
   // Initialize custom hooks

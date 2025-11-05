@@ -172,9 +172,22 @@ const TransformationSection = () => {
     >
       <div className="transformation-scroll-header">
         <h2 className="scroll-section-title">
-          How BrandKlout Positions
-          <br /> You for <span className="gradient-text">Success</span>
+          How BrandKlout Positions You for{" "}
+          <span
+            style={{
+              background: "linear-gradient(90deg, #3B82F6 0%, #9333EA 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            Success
+          </span>
         </h2>
+        <p className="section-subtitle">
+          Turning your All-on-X expertise into the #1 choice for full-arch
+          patients in your city.
+        </p>
       </div>
 
       <div className="transformation-scroll-container">

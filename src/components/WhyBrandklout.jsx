@@ -3,12 +3,12 @@ import "../styles/components/whyBrandKlout.css"
 const WhyBrandKlout = () => {
   const brandKloutFeatures = [
     "Transparent reporting you can trust",
-    "Track every lead with integrated CRM",
-    "Local SEO and AI-driven marketing tools",
+    "Grow sales without more ad spends",
+    "Personalize SEO and Al-Recommendation strategies ",
     "24/7 access to your campaign performance",
     "Exclusive territory protection for your area",
     "60-day money-back guarantee",
-    "No long contracts. Stay for results",
+    "Flexible month-to-month. No Contract",
   ]
 
   const othersFeatures = [
@@ -28,9 +28,21 @@ const WhyBrandKlout = () => {
     >
       <div className="why-brandklout-container">
         <div className="why-brandklout-header">
-          <h2 className="why-brandklout-title">What Makes Us Different?</h2>
+          <h2 className="section-title">
+            What Makes Us{" "}
+            <span
+              style={{
+                background: "linear-gradient(90deg, #3B82F6 0%, #9333EA 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Different?
+            </span>
+          </h2>
 
-          <p className="why-brandklout-subtitle">
+          <p className="section-subtitle">
             We focus on transparency, patient growth, and long-term success you
             can measure.
           </p>
@@ -38,45 +50,50 @@ const WhyBrandKlout = () => {
 
         <div className="comparison-grid">
           {/* BrandKlout Side */}
-          <div className="comparison-column brandklout-column">
+          <div>
+            {/* Header OUTSIDE the card */}
             <div className="column-header">
               <h3>BrandKlout</h3>
-              <div className="decorative-line"></div>
             </div>
-            <div className="features-section">
-              <h4 className="features-title">FEATURES INCLUDED :</h4>
-              <ul className="features-list">
-                {brandKloutFeatures.map((feature, index) => (
-                  <li key={index} className="feature-item">
-                    <span className="check-icon">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="#10B981"
-                          strokeWidth="2"
+
+            {/* Card */}
+            <div className="comparison-column brandklout-column">
+              <div className="features-section">
+                <h4 className="features-title">FEATURES INCLUDED :</h4>
+                <ul className="features-list">
+                  {brandKloutFeatures.map((feature, index) => (
+                    <li key={index} className="feature-item">
+                      <span className="check-icon">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
                           fill="none"
-                        />
-                        <path
-                          d="M8 12L11 15L16 9"
-                          stroke="#10B981"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                    <span className="feature-text">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="#10B981"
+                            strokeWidth="2"
+                            fill="none"
+                          />
+                          <path
+                            d="M8 12L11 15L16 9"
+                            stroke="#10B981"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                      <span className="feature-text">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
+            <div className="decorative-line"></div>
           </div>
 
           {/* VS Badge */}
@@ -85,42 +102,47 @@ const WhyBrandKlout = () => {
           </div>
 
           {/* Others Side */}
-          <div className="comparison-column others-column">
+          <div>
+            {/* Header OUTSIDE the card */}
             <div className="column-header">
               <h3>Others</h3>
             </div>
-            <div className="features-section">
-              <h4 className="features-title">FEATURES NOT INCLUDED :</h4>
-              <ul className="features-list">
-                {othersFeatures.map((feature, index) => (
-                  <li key={index} className="feature-item">
-                    <span className="cross-icon">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="#EF4444"
-                          strokeWidth="2"
+
+            {/* Card */}
+            <div className="comparison-column others-column">
+              <div className="features-section">
+                <h4 className="features-title">FEATURES NOT INCLUDED :</h4>
+                <ul className="features-list">
+                  {othersFeatures.map((feature, index) => (
+                    <li key={index} className="feature-item">
+                      <span className="cross-icon">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
                           fill="none"
-                        />
-                        <path
-                          d="M15 9L9 15M9 9L15 15"
-                          stroke="#EF4444"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                    </span>
-                    <span className="feature-text">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="#EF4444"
+                            strokeWidth="2"
+                            fill="none"
+                          />
+                          <path
+                            d="M15 9L9 15M9 9L15 15"
+                            stroke="#EF4444"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                          />
+                        </svg>
+                      </span>
+                      <span className="feature-text">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -128,11 +150,9 @@ const WhyBrandKlout = () => {
         {/* Guarantee Text */}
         <div className="guarantee-text">
           <p>
-            <strong>
-              No Lock-In Contract.
-              <br /> 60-Days Money Back Guarantee. <br />
-              No Questions Asked.
-            </strong>
+            No Lock-In Contract.
+            <br /> 60-Days Money Back Guarantee. <br />
+            No Questions Asked.
           </p>
         </div>
       </div>

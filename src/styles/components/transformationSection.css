@@ -18,26 +18,22 @@
 }
 
 .scroll-section-title {
-  font-size: 56px;
+  font-size: 48px;
   font-weight: 700;
-  line-height: 1.2;
-  margin: 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   color: black;
 }
 
-.transformation-intro .section-subtitle {
-  font-size: 18px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-  max-width: 800px;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.section-subtitle {
+  font-size: 20px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Cards Container */

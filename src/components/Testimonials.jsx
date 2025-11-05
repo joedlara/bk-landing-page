@@ -45,7 +45,7 @@ const Testimonials = () => {
   }
 
   return (
-    <section className="testimonials-section scroll-fade-in" id="testimonials">
+    <section className="testimonials-section scroll-fade-in">
       <h2 className="section-title">
         Successful Clients,
         <span
@@ -123,7 +123,6 @@ const Testimonials = () => {
                   <p className="metric-description">
                     Received{" "}
                     <strong>{testimonial.metrics.reviews.description}</strong>{" "}
-                    <br />
                     {testimonial.metrics.reviews.detail}
                   </p>
                 </div>
