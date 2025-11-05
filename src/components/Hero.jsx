@@ -31,7 +31,8 @@ const Hero = () => {
           }}
         >
           Rank Top 3
-        </span>
+        </span>{" "}
+        on
         <br />
         Google & AI Search
       </h1>
@@ -50,7 +51,7 @@ const Hero = () => {
           href="https://bk21question.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="cta-button cta-button-solid"
+          className="final-cta-button cta-button-solid"
           style={{ fontSize: "16px", padding: "14px 32px" }}
         >
           Prequalify Your Practice

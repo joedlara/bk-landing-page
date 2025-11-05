@@ -53,7 +53,17 @@ const WhyBrandKlout = () => {
           <div>
             {/* Header OUTSIDE the card */}
             <div className="column-header">
-              <h3>BrandKlout</h3>
+              <h3
+                style={{
+                  background:
+                    "linear-gradient(90deg, #3B82F6 0%, #9333EA 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                BrandKlout
+              </h3>
               <div className="decorative-line"></div>
             </div>
 
