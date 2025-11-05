@@ -1,7 +1,7 @@
 /* Testimonials Section - CONSISTENT PADDING */
 .testimonials-section {
   padding: var(--section-padding-y) var(--section-padding-x);
-  max-width: 100%;
+  max-width: var(--container-max);
   margin: 0 auto;
 }
 
