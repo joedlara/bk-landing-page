@@ -33,8 +33,7 @@ const CTA = () => {
             href="https://bk21question.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-button cta-button-solid"
-            style={{ fontSize: "16px", padding: "14px 32px" }}
+            className="final-cta-button"
           >
             Prequalify Your Practice
           </a>

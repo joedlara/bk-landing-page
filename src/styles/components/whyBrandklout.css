@@ -53,6 +53,7 @@
 .column-header {
   margin-bottom: 1rem;
   padding: 0 0.5rem;
+  text-align: center;
 }
 
 .column-header h3 {
@@ -68,6 +69,7 @@
   height: 3px;
   background: #000;
   position: relative;
+  margin: 0 auto;
 }
 
 .decorative-line::after {
@@ -78,6 +80,8 @@
   width: 80%;
   height: 2px;
   background: #000;
+
+  margin: 0 auto;
 }
 
 /* Columns - EQUAL HEIGHT */
