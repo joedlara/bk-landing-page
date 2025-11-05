@@ -19,7 +19,8 @@ const CTA = () => {
           <br /> Dentists in Your Area?
         </h2>
         <p className="section-subtitle">
-          What would it mean for you to show up first on Google & AI search?
+          What would it mean for you to show up first on{" "}
+          <span className="final-cta-highlight">Google & AI search</span>?
         </p>
         <div
           style={{
