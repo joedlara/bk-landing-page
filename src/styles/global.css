@@ -93,7 +93,7 @@ body {
 /* Glassmorphic Elements */
 .glass {
   background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 0px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(1.25rem);
   -webkit-backdrop-filter: blur(1.25rem);

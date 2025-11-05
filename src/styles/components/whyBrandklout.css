@@ -13,7 +13,8 @@
 /* Header */
 .why-brandklout-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
+  margin-top: 3.5rem;
 }
 
 .section-title {
@@ -67,7 +68,6 @@
   height: 3px;
   background: #000;
   position: relative;
-  margin: 1rem;
 }
 
 .decorative-line::after {
@@ -196,8 +196,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800%;
-  height: 800%;
+  width: 200%;
+  height: 200%;
   background: radial-gradient(
     circle,
     rgba(168, 224, 99, 0.5) 0%,
@@ -222,22 +222,122 @@
   }
 }
 
-/* Guarantee Text */
-.guarantee-text {
+/* Guarantee Section - SPECIAL STYLING */
+.guarantee-section {
   text-align: center;
-  margin-top: 3.75rem;
-  padding: 1.875rem 1.25rem;
+  margin-top: 5rem;
+  padding: 3.75rem 2.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.08) 0%,
+    rgba(118, 75, 162, 0.08) 100%
+  );
+  border-radius: var(--radius-xl);
+  border: 2px solid rgba(102, 126, 234, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle glow effect */
+.guarantee-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(102, 126, 234, 0.1) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.guarantee-content {
+  position: relative;
+  z-index: 1;
+}
+
+.guarantee-text {
+  margin-bottom: 2.5rem;
 }
 
 .guarantee-text p {
-  font-size: 1.875rem;
+  font-size: 2.25rem;
+  font-weight: 700;
   color: #000;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.guarantee-text strong {
+.guarantee-highlight {
+  display: inline-block;
+  background: linear-gradient(90deg, #3b82f6 0%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+/* CTA Button */
+.guarantee-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.125rem 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 1.125rem;
   font-weight: 700;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  box-shadow: 0 0.5rem 1.5rem rgba(102, 126, 234, 0.3);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.guarantee-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.guarantee-cta:hover::before {
+  left: 100%;
+}
+
+.guarantee-cta:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.75rem 2rem rgba(102, 126, 234, 0.4);
+}
+
+.cta-arrow {
+  font-size: 1.25rem;
+  transition: transform var(--transition-base);
+}
+
+.guarantee-cta:hover .cta-arrow {
+  transform: translateX(0.25rem);
 }
 
 /* Responsive Design */
@@ -267,6 +367,16 @@
 
   .guarantee-text p {
     font-size: var(--text-xl);
+  }
+
+  .guarantee-section {
+    padding: 2.5rem 1.5rem;
+    margin-top: 3.75rem;
+  }
+
+  .guarantee-cta {
+    font-size: 1rem;
+    padding: 1rem 2rem;
   }
 }
 
@@ -322,6 +432,16 @@
   .guarantee-text p {
     font-size: var(--text-lg);
   }
+
+  .guarantee-section {
+    padding: 2rem 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  .guarantee-cta {
+    font-size: 0.9375rem;
+    padding: 0.875rem 1.75rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -356,5 +476,21 @@
 
   .guarantee-text p {
     font-size: var(--text-base);
+  }
+
+  .guarantee-section {
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .guarantee-text {
+    margin-bottom: 1.5rem;
+  }
+
+  .guarantee-cta {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    max-width: 18.75rem;
   }
 }

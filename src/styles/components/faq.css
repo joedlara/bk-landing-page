@@ -26,10 +26,6 @@
   background: rgba(255, 255, 255, 0.05);
 }
 
-body.light-mode .faq-question:hover {
-  background: rgba(255, 255, 255, 0.8);
-}
-
 .faq-question h3 {
   font-size: var(--text-xl);
   font-weight: 600;

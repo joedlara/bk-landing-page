@@ -16,6 +16,7 @@ import WhyBrandKlout from "./components/WhyBrandklout"
 
 import "./styles/global.css"
 import PracticeLogos from "./components/PracticeLogos"
+import FinalCta from "./components/FinalCta"
 
 function App() {
   // Initialize custom hooks
@@ -35,6 +36,7 @@ function App() {
       <GoogleReviews />
       <CTA />
       <FAQ />
+      <FinalCta />
       <Footer />
     </>
   )

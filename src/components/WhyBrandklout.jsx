@@ -54,6 +54,7 @@ const WhyBrandKlout = () => {
             {/* Header OUTSIDE the card */}
             <div className="column-header">
               <h3>BrandKlout</h3>
+              <div className="decorative-line"></div>
             </div>
 
             {/* Card */}
@@ -93,7 +94,6 @@ const WhyBrandKlout = () => {
                 </ul>
               </div>
             </div>
-            <div className="decorative-line"></div>
           </div>
 
           {/* VS Badge */}
@@ -147,13 +147,32 @@ const WhyBrandKlout = () => {
           </div>
         </div>
 
-        {/* Guarantee Text */}
-        <div className="guarantee-text">
-          <p>
-            No Lock-In Contract.
-            <br /> 60-Days Money Back Guarantee. <br />
-            No Questions Asked.
-          </p>
+        {/* Guarantee Section */}
+        <div className="guarantee-section">
+          <div className="guarantee-content">
+            <div className="guarantee-text">
+              <p>
+                <span className="guarantee-highlight">
+                  No Lock-In Contract.
+                </span>
+                <br />
+                <span className="guarantee-highlight">
+                  60-Days Money Back Guarantee.
+                </span>
+                <br />
+                <span className="guarantee-highlight">No Questions Asked.</span>
+              </p>
+            </div>
+            <a
+              href="https://calendly.com/your-calendly-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="guarantee-cta"
+            >
+              Get Started Today
+              <span className="cta-arrow">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

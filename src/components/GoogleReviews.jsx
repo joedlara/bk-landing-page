@@ -28,7 +28,6 @@ const GoogleReviews = () => {
     <section className="google-reviews-section scroll-fade-in" id="reviews">
       <div className="google-reviews-header">
         <h2 className="section-title">
-          Trusted by Leading{" "}
           <span
             style={{
               background: "linear-gradient(90deg, #3B82F6 0%, #9333EA 100%)",
@@ -37,8 +36,9 @@ const GoogleReviews = () => {
               backgroundClip: "text",
             }}
           >
-            Dental Practices
-          </span>
+            Trusted
+          </span>{" "}
+          by Leading Dental Practices
         </h2>
         <p className="section-subtitle">
           Don't just take our word for it - see what our clients say
