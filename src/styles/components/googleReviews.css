@@ -1,22 +1,36 @@
 /* Google Reviews Section */
 .google-reviews-section {
-  padding: 100px 40px;
-  max-width: 1400px;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  max-width: var(--container-max);
   margin: 0 auto;
-  position: relative;
 }
 
-/* Go High Level Reviews Container */
-.ghl-reviews-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-  min-height: 400px;
+.section-title {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: black;
 }
 
-.ghl-reviews-container iframe {
-  display: block;
-  width: 100%;
-  min-height: 500px;
-  border: none;
+.section-subtitle {
+  font-size: var(--text-xl);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: var(--spacing-xl);
+  max-width: var(--container-text);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .google-reviews-section {
+    padding: var(--section-padding-y) var(--section-padding-x);
+  }
+}
+
+@media (max-width: 480px) {
+  .google-reviews-section {
+    padding: var(--section-padding-y) var(--section-padding-x);
+  }
 }

@@ -10,9 +10,13 @@ import video4 from "../assets/AI_search_map.mp4"
 const TransformationSection = () => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [videoStates, setVideoStates] = useState([false, false, false, false])
+  const [showPlayButton, setShowPlayButton] = useState([true, true, true, true])
+  const [isLoading, setIsLoading] = useState([false, false, false, false])
+  const [isPlaying, setIsPlaying] = useState([false, false, false, false])
   const sectionRef = useRef(null)
   const videoRefs = useRef([])
   const cardRefs = useRef([])
+  const playCheckIntervals = useRef([])
 
   const cards = [
     {
@@ -65,20 +69,45 @@ const TransformationSection = () => {
           if (index !== -1 && index !== activeIndex) {
             setActiveIndex(index)
 
-            // Play video when card becomes active with mobile-friendly handling
+            // Try to auto-play, but show play button if it fails
             if (videoRefs.current[index]) {
               const video = videoRefs.current[index]
               video.currentTime = 0
 
-              // Use promise-based play with error handling for mobile
+              // Clear any existing interval
+              if (playCheckIntervals.current[index]) {
+                clearInterval(playCheckIntervals.current[index])
+                playCheckIntervals.current[index] = null
+              }
+
               const playPromise = video.play()
 
               if (playPromise !== undefined) {
-                playPromise.catch((error) => {
-                  // Auto-play was prevented (common on mobile)
-                  console.log("Video autoplay prevented:", error)
-                  // Optionally, you could show a play button here
-                })
+                playPromise
+                  .then(() => {
+                    // Auto-play succeeded, hide play button
+                    setShowPlayButton((prev) => {
+                      const newStates = [...prev]
+                      newStates[index] = false
+                      return newStates
+                    })
+                    setIsPlaying((prev) => {
+                      const newStates = [...prev]
+                      newStates[index] = true
+                      return newStates
+                    })
+                    // Start checking if video progresses
+                    startPlayCheck(index)
+                  })
+                  .catch((error) => {
+                    // Auto-play prevented, show play button
+                    console.log("Video autoplay prevented:", error)
+                    setShowPlayButton((prev) => {
+                      const newStates = [...prev]
+                      newStates[index] = true
+                      return newStates
+                    })
+                  })
               }
 
               // Reset video state
@@ -105,7 +134,7 @@ const TransformationSection = () => {
         if (card) observer.unobserve(card)
       })
     }
-  }, [activeIndex]) // Removed videoStates dependency to prevent observer recreation
+  }, [activeIndex])
 
   // Initial play for first video when component mounts
   useEffect(() => {
@@ -117,9 +146,31 @@ const TransformationSection = () => {
         const playPromise = video.play()
 
         if (playPromise !== undefined) {
-          playPromise.catch((error) => {
-            console.log("Initial video autoplay prevented:", error)
-          })
+          playPromise
+            .then(() => {
+              // Auto-play succeeded, hide play button
+              setShowPlayButton((prev) => {
+                const newStates = [...prev]
+                newStates[0] = false
+                return newStates
+              })
+              setIsPlaying((prev) => {
+                const newStates = [...prev]
+                newStates[0] = true
+                return newStates
+              })
+              // Start checking if video progresses
+              startPlayCheck(0)
+            })
+            .catch((error) => {
+              console.log("Initial video autoplay prevented:", error)
+              // Show play button on first video
+              setShowPlayButton((prev) => {
+                const newStates = [...prev]
+                newStates[0] = true
+                return newStates
+              })
+            })
         }
       }
     }, 300)
@@ -142,27 +193,173 @@ const TransformationSection = () => {
       newStates[index] = true
       return newStates
     })
+    setIsPlaying((prev) => {
+      const newStates = [...prev]
+      newStates[index] = false
+      return newStates
+    })
+    setIsLoading((prev) => {
+      const newStates = [...prev]
+      newStates[index] = false
+      return newStates
+    })
+    // Clear interval when video ends
+    if (playCheckIntervals.current[index]) {
+      clearInterval(playCheckIntervals.current[index])
+      playCheckIntervals.current[index] = null
+    }
+  }
+
+  const handleVideoWaiting = (index) => {
+    setIsLoading((prev) => {
+      const newStates = [...prev]
+      newStates[index] = true
+      return newStates
+    })
+  }
+
+  const handleVideoPlaying = (index) => {
+    setIsLoading((prev) => {
+      const newStates = [...prev]
+      newStates[index] = false
+      return newStates
+    })
+    setIsPlaying((prev) => {
+      const newStates = [...prev]
+      newStates[index] = true
+      return newStates
+    })
+  }
+
+  const handleVideoPause = (index) => {
+    setIsPlaying((prev) => {
+      const newStates = [...prev]
+      newStates[index] = false
+      return newStates
+    })
+  }
+
+  const startPlayCheck = (index) => {
+    // Clear any existing interval
+    if (playCheckIntervals.current[index]) {
+      clearInterval(playCheckIntervals.current[index])
+    }
+
+    // Check if video is actually progressing
+    let lastTime = 0
+    let stuckCount = 0
+
+    playCheckIntervals.current[index] = setInterval(() => {
+      const video = videoRefs.current[index]
+      if (!video) return
+
+      const currentTime = video.currentTime
+
+      // If time hasn't changed and video isn't ended
+      if (currentTime === lastTime && !video.ended && !video.paused) {
+        stuckCount++
+
+        // If stuck for 2 seconds (4 checks at 500ms intervals), show play button
+        if (stuckCount >= 4) {
+          setShowPlayButton((prev) => {
+            const newStates = [...prev]
+            newStates[index] = true
+            return newStates
+          })
+          setIsLoading((prev) => {
+            const newStates = [...prev]
+            newStates[index] = false
+            return newStates
+          })
+        }
+      } else {
+        stuckCount = 0
+        lastTime = currentTime
+      }
+    }, 500)
   }
 
   const handleReplay = (index) => {
     if (videoRefs.current[index]) {
       const video = videoRefs.current[index]
       video.currentTime = 0
+
+      // Clear any existing interval
+      if (playCheckIntervals.current[index]) {
+        clearInterval(playCheckIntervals.current[index])
+        playCheckIntervals.current[index] = null
+      }
+
       const playPromise = video.play()
 
       if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          console.log("Replay prevented:", error)
-        })
+        playPromise
+          .then(() => {
+            setVideoStates((prev) => {
+              const newStates = [...prev]
+              newStates[index] = false
+              return newStates
+            })
+            setIsPlaying((prev) => {
+              const newStates = [...prev]
+              newStates[index] = true
+              return newStates
+            })
+            // Start checking if video progresses
+            startPlayCheck(index)
+          })
+          .catch((error) => {
+            console.log("Replay prevented:", error)
+          })
       }
-
-      setVideoStates((prev) => {
-        const newStates = [...prev]
-        newStates[index] = false
-        return newStates
-      })
     }
   }
+
+  const handlePlayClick = (index) => {
+    if (videoRefs.current[index]) {
+      const video = videoRefs.current[index]
+      video.currentTime = 0
+
+      // Clear any existing interval
+      if (playCheckIntervals.current[index]) {
+        clearInterval(playCheckIntervals.current[index])
+        playCheckIntervals.current[index] = null
+      }
+
+      const playPromise = video.play()
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // Hide play button once playing
+            setShowPlayButton((prev) => {
+              const newStates = [...prev]
+              newStates[index] = false
+              return newStates
+            })
+            setIsPlaying((prev) => {
+              const newStates = [...prev]
+              newStates[index] = true
+              return newStates
+            })
+            // Start checking if video progresses
+            startPlayCheck(index)
+          })
+          .catch((error) => {
+            console.log("Manual play prevented:", error)
+          })
+      }
+    }
+  }
+
+  // Cleanup intervals on unmount
+  useEffect(() => {
+    return () => {
+      playCheckIntervals.current.forEach((interval) => {
+        if (interval) clearInterval(interval)
+      })
+    }
+  }, [])
 
   return (
     <section
@@ -218,8 +415,51 @@ const TransformationSection = () => {
                   preload="auto"
                   className="card-video"
                   onEnded={() => handleVideoEnd(index)}
+                  onWaiting={() => handleVideoWaiting(index)}
+                  onPlaying={() => handleVideoPlaying(index)}
+                  onPause={() => handleVideoPause(index)}
                   webkit-playsinline="true"
                 />
+                {isLoading[index] && activeIndex === index && (
+                  <div className="video-loading">
+                    <div className="loading-spinner"></div>
+                  </div>
+                )}
+                {showPlayButton[index] &&
+                  activeIndex === index &&
+                  !isLoading[index] && (
+                    <button
+                      className="play-button"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        handlePlayClick(index)
+                      }}
+                      aria-label="Play video"
+                    >
+                      <svg
+                        width="64"
+                        height="64"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          fill="rgba(255, 255, 255, 0.9)"
+                        />
+                        <path
+                          d="M10 8L16 12L10 16V8Z"
+                          fill="currentColor"
+                          stroke="currentColor"
+                          strokeWidth="1"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  )}
                 {videoStates[index] && activeIndex === index && (
                   <button
                     className="replay-button"

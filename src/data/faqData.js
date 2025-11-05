@@ -33,7 +33,8 @@ export const faqData = [
   },
   {
     id: 6,
-    question: "What platforms do you manage?",
+    question:
+      "If a patient has already left a review, does your system keep asking them to write another one on a different platform?",
     answer:
       "We manage your reputation across Google, Facebook, Yelp, Healthgrades, and optimize for AI platforms like ChatGPT, Google Gemini, Siri, Alexa, and Meta AI.",
   },
