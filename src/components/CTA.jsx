@@ -4,7 +4,7 @@ const CTA = () => {
   return (
     <section className="cta-section scroll-scale" id="cta">
       <div className="cta-box">
-        <h2>
+        <h2 className="section-title">
           Ready to Become the {""}
           <span
             style={{
@@ -18,7 +18,7 @@ const CTA = () => {
           </span>
           <br /> Dentists in Your Area?
         </h2>
-        <p>
+        <p className="section-subtitle">
           What would it mean for you to show up first on Google & AI search?
         </p>
         <div
@@ -48,7 +48,6 @@ const CTA = () => {
                 src="https://www.youtube.com/embed/qxXc1GruLLY?si=rSh3W-e5sy79awWj"
                 title="BrandKlout Introduction"
                 frameBorder="0"
-                modestBranding="1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 className="cta-video-iframe"

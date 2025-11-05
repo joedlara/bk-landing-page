@@ -20,83 +20,32 @@ const TransformationSection = () => {
       number: "01",
       title: "Future-Proof Marketing",
       subtitle: "Dominate AI search engines in your area",
-      strategies: [
-        {
-          name: "Local SEO Optimization",
-          description: "Improve your visibility across search engines",
-        },
-        {
-          name: "AI Marketing",
-          description: "Get noticed by more patients online",
-        },
-        {
-          name: "Performance Tracking",
-          description: "Understand what's working and where to improve",
-        },
-      ],
       videoSrc: video1,
     },
     {
       id: 1,
       number: "02",
-      title: "Unmatched Authority",
-      subtitle: "Build credibility as the #1 choice for implant procedures",
-      strategies: [
-        {
-          name: "Google Reviews",
-          description: "Strengthen credibility with verified patient feedback",
-        },
-        {
-          name: "Doctor Branding",
-          description: "Build recognition as a trusted implant expert",
-        },
-        {
-          name: "Before & After Gallery",
-          description: "Turn patient results into proof of excellence",
-        },
-      ],
+      title: "Rank Top 3 on Google & Al Search",
+      subtitle:
+        "Feature on Google's Al overview. Show up first on Al search (ChatGPT, Gemini, Siri, etc)",
       videoSrc: video2,
     },
     {
       id: 2,
       number: "03",
       title: "Organic Lead Flow",
-      subtitle: "Steady stream without relying on PPC",
-      strategies: [
-        {
-          name: "Local SEO Mastery",
-          description: "Boost visibility in your area",
-        },
-        {
-          name: "Content Marketing",
-          description: "Build trust with valuable insights",
-        },
-        {
-          name: "Conversion Optimization",
-          description: "Turn visitors into appointments",
-        },
-      ],
+      subtitle:
+        "Deliver organic leads that grow over time without relying on expensive ad spend or pay-per-click strategy.",
+
       videoSrc: video3,
     },
     {
       id: 3,
       number: "04",
-      title: "Thriving Practice",
-      subtitle: "Higher profitability, happier patients, motivated team",
-      strategies: [
-        {
-          name: "Higher Profitability",
-          description: "Streamline operations and increase case acceptance",
-        },
-        {
-          name: "Patient Satisfaction",
-          description: "Deliver care that builds lasting loyalty",
-        },
-        {
-          name: "Team Motivation",
-          description: "Create a culture of growth and excellence",
-        },
-      ],
+      title: "First Mover Advantage",
+      subtitle:
+        "Future-proof your practice and dominate Al search engines in your area.",
+
       videoSrc: video4,
     },
   ]
@@ -223,9 +172,22 @@ const TransformationSection = () => {
     >
       <div className="transformation-scroll-header">
         <h2 className="scroll-section-title">
-          How BrandKlout Positions
-          <br /> You for <span className="gradient-text">Success</span>
+          How BrandKlout Positions You for{" "}
+          <span
+            style={{
+              background: "linear-gradient(90deg, #3B82F6 0%, #9333EA 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            Success
+          </span>
         </h2>
+        <p className="section-subtitle">
+          Turning your All-on-X expertise into the #1 choice for full-arch
+          patients in your city.
+        </p>
       </div>
 
       <div className="transformation-scroll-container">
@@ -245,20 +207,6 @@ const TransformationSection = () => {
                 <span className="card-number">{card.number}</span>
                 <h3 className="card-title">{card.title}</h3>
                 <p className="card-subtitle">{card.subtitle}</p>
-
-                <div className="card-strategies">
-                  <h4 className="strategies-title">Key Strategies</h4>
-                  <ul className="strategies-list">
-                    {card.strategies.map((strategy, idx) => (
-                      <li key={idx} className="strategy-item">
-                        <span className="strategy-name">{strategy.name}</span>
-                        <span className="strategy-desc">
-                          {strategy.description}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
 
               <div className="card-video-wrapper">

@@ -20,10 +20,34 @@ const Testimonials = () => {
     gemini: geminiLogo,
     grok: grokLogo,
   }
+
+  // Helper function to parse text with **bold** markers
+  const parseFormattedText = (text) => {
+    const parts = text.split(/(\*\*.*?\*\*)/)
+
+    return parts.map((part, index) => {
+      if (part.startsWith("**") && part.endsWith("**")) {
+        const content = part.slice(2, -2)
+        return (
+          <strong
+            key={index}
+            style={{
+              fontWeight: 700,
+              color: "rgba(0, 0, 0, 0.9)",
+            }}
+          >
+            {content}
+          </strong>
+        )
+      }
+      return part
+    })
+  }
+
   return (
-    <section className="testimonials-section scroll-fade-in" id="testimonials">
+    <section className="testimonials-section scroll-fade-in">
       <h2 className="section-title">
-        Real Clients,
+        Successful Clients,
         <span
           style={{
             background: "linear-gradient(90deg, #3B82F6 0%, #9333EA 100%)",
@@ -151,12 +175,14 @@ const Testimonials = () => {
                       Recommended
                       <br />
                       <span className="metric-ai-badge-sub">
-                        by ChatGPT & Google Gemini
+                        {testimonial.metrics.aiRecommendation.descriptions}
                       </span>
                     </span>
                   </div>
                   <p className="metric-description">
-                    {testimonial.metrics.aiRecommendation.detail}
+                    {parseFormattedText(
+                      testimonial.metrics.aiRecommendation.detail.text
+                    )}
                   </p>
                 </div>
               </div>

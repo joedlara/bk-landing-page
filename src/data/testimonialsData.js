@@ -2,7 +2,7 @@ export const testimonialsData = [
   {
     id: 1,
     name: "Dr. Krystal Pham",
-    practice: "Oceanic Dental",
+    practice: "Oceanic Dental, Multi Locations",
     avatar: "VK",
     rating: 5,
     videoUrl: "https://www.youtube.com/embed/r92o3HAhRec?si=VmLL3P9ga2AY5d9g",
@@ -29,16 +29,17 @@ export const testimonialsData = [
           "best veneer",
           "best smile makeover",
         ],
-        description: "Recommended by ChatGPT & Google Gemini",
-        detail:
-          'Picked as "best implant", "best all-on-4", "best cosmetic", "best veneer", and "best smile makeover" dentist in Fountain Valley as of July 8, 2025.',
+        descriptions: " by ChatGPT & Google Gemini",
+        detail: {
+          text: 'Picked as **"best implant", "best all-on-4", "best cosmetic", "best veneer",** and "best smile makeover" dentist in Fountain Valley as of July 8th, 2025.',
+        },
       },
     },
   },
   {
     id: 2,
     name: "Dr. Suang Priyawat",
-    practice: "Omnia Dental, Chino Hills & Fullerton",
+    practice: "Omnia Dental, , Multi Locations",
     avatar: "SP",
     rating: 5,
     videoUrl: "https://www.youtube.com/embed/xS-FwYPS0DY?si=lzmMhud34UYsEaHb",
@@ -63,9 +64,10 @@ export const testimonialsData = [
           "best family dentist",
           "best cosmetic dentist",
         ],
-        description: "Recommended by ChatGPT & Google Gemini",
-        detail:
-          'Picked as "top-rated dentist", "best family dentist", and "best cosmetic dentist" in Chino Hills as of July 2025.',
+        descriptions: " by ChatGPT & Google Gemini",
+        detail: {
+          text: 'Picked as **"top-rated dentist", "best family dentist",** and **"best cosmetic dentist"** in Chino Hills as of August 26th, 2025.',
+        },
       },
     },
   },
@@ -78,9 +80,9 @@ export const testimonialsData = [
     videoUrl: "https://www.youtube.com/embed/pChw6256klY?si=f1_VWftfJrCeX_cA",
     metrics: {
       reviews: {
-        count: 24,
+        count: 15,
         platforms: ["yelp", "google"],
-        description: "24 new positive reviews within two weeks",
+        description: `15 new positive reviews within two weeks`,
         detail: "on Yelp and Google.",
       },
       rating: {
@@ -93,9 +95,10 @@ export const testimonialsData = [
       aiRecommendation: {
         platforms: ["grok", "gemini"],
         categories: ["best implant training", "top dental education"],
-        description: "Recommended by ChatGPT & Google Gemini",
-        detail:
-          "Top 3 on Google, ChatGPT, and Grok for implant training in California.",
+        descriptions: " by Grok & Google Gemini",
+        detail: {
+          text: 'Picked as **"top-rated dental implant courses", "advanced implant courses",** and **"best dental implant training"** in California as of September 16th, 2025.',
+        },
       },
     },
   },

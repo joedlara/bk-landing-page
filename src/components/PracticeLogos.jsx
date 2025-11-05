@@ -1,13 +1,17 @@
 import { useEffect, useRef } from "react"
 import "../styles/components/practiceLogos.css"
 import practice1 from "../assets/practices/ocpao.png"
-import practice2 from "../assets/practices/cal_dental.png"
+
 import practice3 from "../assets/practices/omnia.png"
 import practice4 from "../assets/practices/atwood.png"
 import practice5 from "../assets/practices/oceanic.png"
 import practice6 from "../assets/practices/haven.png"
 import practice7 from "../assets/practices/legacy.png"
 import practice8 from "../assets/practices/ufc.png"
+import practice9 from "../assets/practices/ava.png"
+import practice10 from "../assets/practices/kiss.png"
+import practice11 from "../assets/practices/markis.png"
+import practice12 from "../assets/practices/ace.png"
 
 const PracticeLogos = () => {
   const carouselRef = useRef(null)
@@ -18,11 +22,6 @@ const PracticeLogos = () => {
       id: 1,
       name: "Practice One",
       logo: practice1,
-    },
-    {
-      id: 2,
-      name: "Practice Two",
-      logo: practice2,
     },
     {
       id: 3,
@@ -53,6 +52,26 @@ const PracticeLogos = () => {
       id: 8,
       name: "Practice Eight",
       logo: practice8,
+    },
+    {
+      id: 9,
+      name: "Practice Nine",
+      logo: practice9,
+    },
+    {
+      id: 10,
+      name: "Practice Ten",
+      logo: practice10,
+    },
+    {
+      id: 11,
+      name: "Practice Eleven",
+      logo: practice11,
+    },
+    {
+      id: 12,
+      name: "Practice Twelve",
+      logo: practice12,
     },
   ]
 
