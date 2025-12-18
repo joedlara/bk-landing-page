@@ -1,0 +1,240 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: modalFadeIn var(--transition-base) ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  animation: modalSlideIn var(--transition-base) ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px 20px 30px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: var(--text-2xl);
+  background: linear-gradient(90deg, #3b82f6 0%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: black;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast) ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.modal-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 10px 30px 2px 30px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  overflow-x: auto;
+  background: rgba(0, 0, 0, 0.2);
+  height: 10rem;
+}
+
+.modal-tab {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+  color: black;
+  cursor: pointer;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition-fast) ease;
+  white-space: nowrap;
+  position: relative;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: -2px;
+}
+
+.modal-tab:hover {
+  color: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-tab.active {
+  color: #fff;
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+  border-bottom: 2px solid transparent;
+}
+
+.modal-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6 0%, #9333ea 100%);
+}
+
+.modal-body {
+  padding: 30px;
+  overflow-y: auto;
+  flex: 1;
+  line-height: 1.8;
+}
+
+.modal-body h3 {
+  font-size: var(--text-xl);
+  margin-top: 30px;
+  margin-bottom: 15px;
+
+  color: black;
+}
+
+.modal-body h3:first-child {
+  margin-top: 0;
+}
+
+.modal-body p {
+  margin-bottom: 15px;
+  color: black;
+  font-size: var(--text-base);
+}
+
+.modal-body ul,
+.modal-body ol {
+  margin-bottom: 15px;
+  padding-left: 25px;
+  color: black;
+}
+
+.modal-body li {
+  margin-bottom: 8px;
+}
+
+.modal-body strong {
+  color: black;
+  font-weight: 600;
+}
+
+.modal-body a {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color var(--transition-fast) ease;
+}
+
+.modal-body a:hover {
+  color: #9333ea;
+}
+
+/* Scrollbar styling for modal body */
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    max-height: 90vh;
+  }
+
+  .modal-header {
+    padding: 20px;
+  }
+
+  .modal-header h2 {
+    font-size: var(--text-xl);
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+
+  .modal-body h3 {
+    font-size: var(--text-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-header {
+    padding: 15px;
+  }
+
+  .modal-body {
+    padding: 15px;
+  }
+}

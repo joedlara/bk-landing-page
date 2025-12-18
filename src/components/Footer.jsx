@@ -1,7 +1,17 @@
+import { useState } from "react"
 import "../styles/components/footer.css"
 import logo from "../assets/logos/bk-logo.png"
+import Modal from "./Modal"
 
 const Footer = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modalTab, setModalTab] = useState("privacy")
+
+  const openModal = (tab) => {
+    setModalTab(tab)
+    setIsModalOpen(true)
+  }
+
   return (
     <footer>
       <div
@@ -41,11 +51,22 @@ const Footer = () => {
             <li style={{ marginBottom: "12px" }}>
               <a
                 href="#"
+                onClick={(e) => {
+                  e.preventDefault()
+                  openModal("terms")
+                }}
                 style={{
                   color: "rgba(255, 255, 255, 0.6)",
                   textDecoration: "none",
                   fontSize: "14px",
                   transition: "all 0.3s ease",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.color = "rgba(255, 255, 255, 1)"
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.color = "rgba(255, 255, 255, 0.6)"
                 }}
               >
                 Terms
@@ -54,11 +75,22 @@ const Footer = () => {
             <li style={{ marginBottom: "12px" }}>
               <a
                 href="#"
+                onClick={(e) => {
+                  e.preventDefault()
+                  openModal("privacy")
+                }}
                 style={{
                   color: "rgba(255, 255, 255, 0.6)",
                   textDecoration: "none",
                   fontSize: "14px",
                   transition: "all 0.3s ease",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.color = "rgba(255, 255, 255, 1)"
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.color = "rgba(255, 255, 255, 0.6)"
                 }}
               >
                 Privacy
@@ -67,11 +99,22 @@ const Footer = () => {
             <li style={{ marginBottom: "12px" }}>
               <a
                 href="#"
+                onClick={(e) => {
+                  e.preventDefault()
+                  openModal("hipaa")
+                }}
                 style={{
                   color: "rgba(255, 255, 255, 0.6)",
                   textDecoration: "none",
                   fontSize: "14px",
                   transition: "all 0.3s ease",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.color = "rgba(255, 255, 255, 1)"
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.color = "rgba(255, 255, 255, 0.6)"
                 }}
               >
                 HIPAA
@@ -84,6 +127,12 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>© Copyright 2025, BrandKlout Inc.</p>
       </div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        initialTab={modalTab}
+      />
     </footer>
   )
 }
