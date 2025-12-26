@@ -1,15 +1,10 @@
-import { useState } from "react"
 import "../styles/components/footer.css"
 import logo from "../assets/logos/bk-logo.png"
 import Modal from "./Modal"
 
-const Footer = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [modalTab, setModalTab] = useState("privacy")
-
+const Footer = ({ modalState, setModalState }) => {
   const openModal = (tab) => {
-    setModalTab(tab)
-    setIsModalOpen(true)
+    setModalState({ isOpen: true, tab })
   }
 
   return (
@@ -129,9 +124,9 @@ const Footer = () => {
       </div>
 
       <Modal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        initialTab={modalTab}
+        isOpen={modalState.isOpen}
+        onClose={() => setModalState({ isOpen: false, tab: "privacy" })}
+        initialTab={modalState.tab}
       />
     </footer>
   )
